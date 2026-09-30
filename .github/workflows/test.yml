@@ -1,0 +1,31 @@
+name: Tests
+
+on:
+  pull_request:
+  workflow_dispatch: {}
+
+# Pushes to main are tested by deploy.yml, which runs the same checks before
+# it builds, so a broken commit never reaches the site. This covers PRs.
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run typecheck
+      # The roadmap is a VIEW of each phase's front matter. A view that can go
+      # stale is how status came to be written in two places that disagreed.
+      - name: The roadmap is current
+        run: npm run roadmap -- --check
+      - run: npm run build

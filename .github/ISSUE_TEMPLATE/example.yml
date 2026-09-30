@@ -1,0 +1,38 @@
+name: Example idea
+description: An app idea for the iPhone Duo, to add to the explorer
+title: "Example: "
+labels: [example]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: One or two sentences. What is it, and why is the Duo the right device for it?
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: [music, games, retro, productivity, learning, patterns]
+    validations:
+      required: true
+  - type: textarea
+    id: poses
+    attributes:
+      label: What it does in each pose
+      description: Closed, closed · landscape, open, open · portrait, book, table. "Nothing special" is an answer.
+      value: |
+        - Closed:
+        - Closed · landscape:
+        - Open:
+        - Open · portrait:
+        - Book:
+        - Table:
+    validations:
+      required: true
+  - type: input
+    id: credit
+    attributes:
+      label: Where the idea came from
+      description: A link to the post, video or repo, so it can be credited.

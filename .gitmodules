@@ -1,0 +1,6 @@
+[submodule ".agents/skills/apple-hig"]
+	path = .agents/skills/apple-hig
+	url = https://github.com/justinwetch/HIGAgentSkills
+[submodule "vendor/hinge-guess"]
+	path = vendor/hinge-guess
+	url = https://github.com/erkamyaman/hinge-guess

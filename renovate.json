@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Weekly, grouped, never merged without a person. Same shape as dalmaer/ledger.",
+  "extends": ["config:recommended"],
+  "timezone": "America/Denver",
+  "schedule": ["before 6am on monday"],
+  "labels": ["dependencies"],
+  "prConcurrentLimit": 4,
+  "packageRules": [
+    { "matchUpdateTypes": ["minor", "patch"], "groupName": "non-major dependencies", "groupSlug": "all-minor-patch" },
+    { "matchManagers": ["github-actions"], "groupName": "GitHub Actions", "groupSlug": "github-actions" },
+    { "matchManagers": ["git-submodules"], "enabled": true, "groupName": "vendored skills and references" }
+  ],
+  "git-submodules": { "enabled": true }
+}

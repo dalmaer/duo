@@ -1,0 +1,63 @@
+name: Deploy
+
+# Every push to main is checked, built and published to
+# https://dalmaer.github.io/duo/ — then the live page is asked which build it
+# is serving. A deploy that "succeeds" while the old site keeps serving is the
+# failure worth catching (docs/lessons.md, 2).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run typecheck
+      - name: The roadmap is current
+        run: npm run roadmap -- --check
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  verify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: The live site is serving this build
+        run: |
+          url="https://dalmaer.github.io/duo/"
+          for i in $(seq 1 20); do
+            live="$(curl -fsSL -H 'Cache-Control: no-cache' "$url?v=$GITHUB_SHA" | sed -n 's/.*name="duo-build" content="\([^"]*\)".*/\1/p')"
+            if [ "$live" = "$GITHUB_SHA" ]; then echo "serving $live"; exit 0; fi
+            echo "attempt $i: live is '${live:-nothing}', want $GITHUB_SHA"; sleep 15
+          done
+          echo "::error::$url is not serving $GITHUB_SHA after 5 minutes"; exit 1
