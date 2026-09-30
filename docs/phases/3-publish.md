@@ -1,8 +1,8 @@
 ---
-status: partial
+status: built
 since: 2026-09-30
 issue: 2
-note: "Tests, typecheck, roadmap check and build run in Actions; every push to main deploys to GitHub Pages. Waiting on the first green deploy."
+note: "Every push to main is tested, built and deployed to Pages, then the live page is asked for its build stamp; the first deploy passed that check within a minute."
 ---
 
 # Publish, and keep it honest

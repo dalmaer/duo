@@ -10,26 +10,26 @@ describes. Run `npm run roadmap` after changing one.
 date: people have used the thing and it held. *Built* is the weaker claim —
 the code exists and has been run.
 
-## Built, not yet lived in <sub>2</sub>
+## Built, not yet lived in <sub>4</sub>
 
 | | Phase | Since | |
 | --- | --- | --- | --- |
 | 0 | [The emulated Duo](phases/0-emulator.md) | 2026-09-30 | Two leaves on a hinge in CSS 3D; six poses from one table in src/core/poses.ts, with the transforms unit-tested. Not yet checked on a phone. |
 | 1 | [The example contract, and Cajón](phases/1-example-contract.md) | 2026-09-30 | Example contract in src/core/example.ts and the reference example, Cajón, playable in all six poses. |
+| 2 | [The catalog](phases/2-catalog.md) | 2026-09-30 | All twelve examples built and checked in their best pose on desktop and phone widths; each describes all six poses. Not yet played through by a person in every pose, which is what lived-in needs. · [#1](https://github.com/dalmaer/duo/issues/1) |
+| 3 | [Publish, and keep it honest](phases/3-publish.md) | 2026-09-30 | Every push to main is tested, built and deployed to Pages, then the live page is asked for its build stamp; the first deploy passed that check within a minute. · [#2](https://github.com/dalmaer/duo/issues/2) |
 
-## Partly built <sub>3</sub>
+## Partly built <sub>1</sub>
 
 | | Phase | Since | |
 | --- | --- | --- | --- |
-| 2 | [The catalog](phases/2-catalog.md) | 2026-09-30 | Twelve examples across six categories, from the posts and repos in docs/research/. Being written; each needs a pass in every pose. · [#1](https://github.com/dalmaer/duo/issues/1) |
-| 3 | [Publish, and keep it honest](phases/3-publish.md) | 2026-09-30 | Tests, typecheck, roadmap check and build run in Actions; every push to main deploys to GitHub Pages. Waiting on the first green deploy. · [#2](https://github.com/dalmaer/duo/issues/2) |
 | 10 | [The project builds itself](phases/10-agents-build-it.md) | 2026-09-30 | An @claude workflow answers issues and PRs; issues map to phases. Needs the CLAUDE_CODE_OAUTH_TOKEN secret before it can run. · [#9](https://github.com/dalmaer/duo/issues/9) |
 
 ## Designed <sub>1</sub>
 
 | | Phase | Since | |
 | --- | --- | --- | --- |
-| 4 | [Design direction](phases/4-design-direction.md) | 2026-09-30 | Three directions — Lab bench, Gallery wall, Storyboard — on the isocan canvas and in docs/design/. Waiting on a choice. · [#3](https://github.com/dalmaer/duo/issues/3) |
+| 4 | [Design direction](phases/4-design-direction.md) | 2026-09-30 | Three directions — Lab bench, Gallery wall, Storyboard — on the isocan canvas (isocan.io/p/prj_6X7pnbAWFb) and in docs/design/. The designer recommends Storyboard as the spine; the choice is the owner's. · [#3](https://github.com/dalmaer/duo/issues/3) |
 
 ## Not started <sub>5</sub>
 

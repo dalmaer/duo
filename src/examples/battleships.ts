@@ -111,7 +111,7 @@ const CSS = `
 .bs-log { font-size:11px; color:#b9d0e3; min-height:15px; }
 .bs-log b { color:#fff; }
 .bs-log .old { opacity:.5; display:block; font-size:10px; }
-.bs-btn { all:unset; box-sizing:border-box; text-align:center; cursor:pointer; padding:6px 11px; border-radius:999px; background:#dbe9f5; color:#0a1d2e; font:700 11px/1 system-ui; }
+.bs-btn { all:unset; box-sizing:border-box; text-align:center; white-space:nowrap; cursor:pointer; padding:6px 11px; border-radius:999px; background:#dbe9f5; color:#0a1d2e; font:700 11px/1 system-ui; }
 .bs-btn.ghost { background:transparent; color:#bcd5ea; box-shadow: inset 0 0 0 1px #3c6282; }
 .bs-btn:disabled, .bs-btn[aria-disabled=true] { opacity:.35; cursor:default; }
 .bs-fc { display:flex; flex-direction:column; gap:5px; flex:1; min-width:0; }

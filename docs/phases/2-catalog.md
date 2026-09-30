@@ -1,8 +1,8 @@
 ---
-status: partial
+status: built
 since: 2026-09-30
 issue: 1
-note: "Twelve examples across six categories, from the posts and repos in docs/research/. Being written; each needs a pass in every pose."
+note: "All twelve examples built and checked in their best pose on desktop and phone widths; each describes all six poses. Not yet played through by a person in every pose, which is what lived-in needs."
 ---
 
 # The catalog

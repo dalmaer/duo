@@ -2,7 +2,7 @@
 status: designed
 since: 2026-09-30
 issue: 3
-note: "Three directions — Lab bench, Gallery wall, Storyboard — on the isocan canvas and in docs/design/. Waiting on a choice."
+note: "Three directions — Lab bench, Gallery wall, Storyboard — on the isocan canvas (isocan.io/p/prj_6X7pnbAWFb) and in docs/design/. The designer recommends Storyboard as the spine; the choice is the owner's."
 ---
 
 # Design direction
@@ -21,3 +21,9 @@ example screen and a phone screen, with the sources in
 and the live site matches its three screens.
 
 **Deliberately open.** The choice itself — it is the owner's, not the agent's.
+
+**The designer's recommendation (2026-09-30), not yet a decision.** Build
+*Storyboard* as the spine — all six poses of one example at a glance — with a
+frame expanding into *Lab bench* to play it, *Lab bench*'s pose matrix as a
+secondary "Compare" view, and *Gallery wall*'s live cards only as the front
+door. Full reasoning in [docs/design/README.md](../design/README.md).

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=390,initial-scale=1">
+<title>Duo Explorer — Ch. 01 Cajón (mobile)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box}html,body{margin:0}body{-webkit-font-smoothing:antialiased}
+.duo{position:relative;display:inline-block;flex:none;font-family:-apple-system,"SF Pro Text",Inter,system-ui,sans-serif}
+.duo .sh{position:relative;padding:10px;border-radius:44px;background:linear-gradient(150deg,#55555c 0%,#2a2a2e 30%,#1b1b1e 70%,#2c2c31 100%);
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.12),inset 0 2px 0 rgba(255,255,255,.18),0 40px 60px -30px rgba(0,0,0,.55),0 6px 14px -4px rgba(0,0,0,.35)}
+.duo .scr{position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:#000;display:flex}
+.duo .scr.col{flex-direction:column}
+.duo .half{position:relative;flex:1 1 0;min-width:0;min-height:0;overflow:hidden;display:flex;flex-direction:column}
+.duo .island{position:absolute;z-index:5;top:22px;left:50%;width:78px;height:22px;margin-left:-39px;border-radius:12px;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.05)}
+.duo .cam{position:absolute;z-index:5;top:18px;width:12px;height:12px;border-radius:50%;background:#050505;box-shadow:0 0 0 1px rgba(255,255,255,.07)}
+.duo .crease{position:absolute;z-index:6;pointer-events:none}
+.duo .crease.v{top:0;bottom:0;left:50%;width:14px;margin-left:-7px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05) 35%,rgba(0,0,0,.28) 50%,rgba(255,255,255,.05) 65%,transparent)}
+.duo .crease.h{left:0;right:0;top:50%;height:14px;margin-top:-7px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.05) 35%,rgba(0,0,0,.28) 50%,rgba(255,255,255,.05) 65%,transparent)}
+.duo .glare{position:absolute;inset:0;z-index:7;pointer-events:none;border-radius:inherit;background:linear-gradient(115deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,0) 28%)}
+
+.p-closed .sh{width:300px;height:380px}
+.p-closed-landscape .sh{width:380px;height:300px}
+.p-closed .scr>:first-child{padding-top:58px}
+.p-closed-landscape .scr>:first-child{padding-left:56px}
+.p-closed-landscape .island{top:50%;left:22px;width:22px;height:78px;margin:-39px 0 0 0}
+.p-open .sh{width:600px;height:380px}
+.p-open-portrait .sh{width:380px;height:600px}
+
+.p-book{width:600px;height:400px;display:flex;align-items:center;justify-content:center;perspective:1500px;perspective-origin:50% 40%}
+.p-book .sh{width:300px;height:380px;flex:none}
+.p-book .l{border-radius:44px 10px 10px 44px;transform-origin:right center;transform:rotateY(28deg)}
+.p-book .r{border-radius:10px 44px 44px 10px;transform-origin:left center;transform:rotateY(-28deg)}
+.p-book .l .scr{border-radius:34px 4px 4px 34px}
+.p-book .r .scr{border-radius:4px 34px 34px 4px}
+.p-book .spine{position:absolute;z-index:3;left:50%;top:10px;bottom:10px;width:12px;margin-left:-6px;border-radius:6px;background:linear-gradient(90deg,#141416,#3a3a40,#141416)}
+
+.p-table{width:480px;height:548px;display:flex;flex-direction:column;align-items:center;perspective:1300px;perspective-origin:50% 10%}
+.p-table .t{width:380px;height:300px;flex:none;border-radius:44px 44px 10px 10px;transform-origin:50% 100%;transform:rotateX(5deg)}
+.p-table .b{width:380px;height:300px;flex:none;border-radius:10px 10px 44px 44px;transform-origin:50% 0;transform:rotateX(62deg)}
+.p-table .t .scr{border-radius:34px 34px 4px 4px}
+.p-table .b .scr{border-radius:4px 4px 34px 34px}
+.p-table .knuckle{position:absolute;z-index:4;left:50%;top:292px;width:370px;height:14px;margin-left:-185px;border-radius:7px;background:linear-gradient(180deg,#3d3d43,#141416 60%,#2a2a2e)}
+.p-table .floor{position:absolute;z-index:-1;left:50%;top:330px;width:520px;height:190px;margin-left:-260px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.28),rgba(0,0,0,0))}
+.p-book .floor{position:absolute;z-index:-1;left:50%;bottom:-38px;width:620px;height:70px;margin-left:-310px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.22),rgba(0,0,0,0))}
+
+/* cajón */
+.wood{background:repeating-linear-gradient(90deg,rgba(90,45,12,.10) 0 1px,transparent 1px 9px),repeating-linear-gradient(88deg,rgba(255,232,196,.10) 0 3px,transparent 3px 23px),linear-gradient(180deg,#dba46c,#b8763d)}
+.cj-top{flex:1;display:flex;flex-direction:column;gap:10px;padding:14px;background:#1c130d}
+.cj-face{flex:1;position:relative;border-radius:8px;box-shadow:inset 0 0 0 4px rgba(70,34,10,.45),inset 0 0 26px rgba(70,34,10,.4)}
+.cj-wires{position:absolute;left:14%;right:14%;top:12%;height:13%;background:repeating-linear-gradient(180deg,rgba(45,22,6,.55) 0 2px,transparent 2px 8px)}
+.cj-ring{position:absolute;left:30%;top:24%;width:34%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,244,222,.55),rgba(255,244,222,0) 62%);box-shadow:0 0 0 2px rgba(255,244,222,.45),0 0 0 12px rgba(255,244,222,.12)}
+.cj-name{position:absolute;left:0;right:0;bottom:8%;text-align:center;font:700 11px/1 ui-sans-serif,system-ui;letter-spacing:.38em;color:rgba(55,27,8,.7)}
+.cj-bar{display:flex;align-items:center;gap:6px}
+.cj-chip{font:600 11px/1 ui-sans-serif,system-ui;padding:6px 10px;border-radius:99px;background:#f3e3cc;color:#2a1a0e;white-space:nowrap}
+.cj-chip.o{background:transparent;color:#f3e3cc;box-shadow:inset 0 0 0 1.5px rgba(243,227,204,.35)}
+.cj-lane{display:flex;gap:4px;height:22px}
+.cj-lane b{flex:1;border-radius:4px;background:rgba(255,255,255,.07);font:700 10px/22px ui-monospace,monospace;color:#f3d9b8;text-align:center}
+.cj-lane b.on{background:#f07a4a;color:#1c130d}
+.cj-lane b.x{background:rgba(255,255,255,.03);color:transparent}
+.cj-plate{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:7px;padding:10px;background:#1c130d}
+.cj-plate.one{grid-template-columns:1fr;grid-template-rows:1fr}
+.cj-plate.thumbs{grid-template-columns:1fr;grid-template-rows:1fr 1fr}
+.cj-pad{position:relative;border-radius:7px;box-shadow:inset 0 0 0 1.5px rgba(70,34,10,.35)}
+.cj-pad span{position:absolute;left:10px;bottom:8px;font:700 10px/1 ui-sans-serif,system-ui;letter-spacing:.16em;color:rgba(45,22,6,.72)}
+.cj-pad.hit::after{content:"";position:absolute;inset:0;border-radius:7px;background:radial-gradient(circle at 45% 35%,rgba(255,246,226,.75),rgba(255,246,226,0) 58%)}
+.cj-strip{height:26%;margin:10px 10px 0;border-radius:8px;position:relative}
+.cj-land{flex:1;display:flex;gap:8px;padding:10px 10px 10px 50px;background:#1c130d}
+.cj-land .cj-plate{padding:0}
+.cj-land .mid{width:30%;display:flex;flex-direction:column;gap:8px}
+
+/* sampler */
+.sm{flex:1;background:#0f1012;display:flex;flex-direction:column;padding:14px;gap:8px}
+.sm-row{display:flex;gap:3px;flex:1}
+.sm-row i{flex:1;border-radius:3px;background:#24262b}
+.sm-row i.on{background:var(--c)}
+.sm-pads{flex:1;background:#0f1012;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:14px}
+.sm-pads i{border-radius:8px;background:#23252a;box-shadow:inset 0 -3px 0 rgba(0,0,0,.35)}
+.sm-pads i.on{background:var(--c);box-shadow:0 0 18px var(--c)}
+.sm-filter{font:700 11px/1 ui-monospace,monospace;color:#8ef0c8;letter-spacing:.08em;display:flex;justify-content:space-between}
+.sm-wave{height:40px;background:repeating-linear-gradient(90deg,#8ef0c8 0 2px,transparent 2px 6px);-webkit-mask:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);opacity:.8;border-radius:4px}
+
+/* battleships */
+.bs{flex:1;background:#0b2340;padding:16px;display:flex;flex-direction:column;gap:8px}
+.bs.own{background:#11304f}
+.bs-h{font:700 11px/1 ui-monospace,monospace;letter-spacing:.14em;color:#8fb6de}
+.bs-g{flex:1;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);gap:3px}
+.bs-g i{border-radius:50%;background:rgba(143,182,222,.16);margin:22%}
+.bs-g i.h{background:#ff4d3d;margin:14%;box-shadow:0 0 8px #ff4d3d}
+.bs-g i.m{background:#e8eef5;margin:26%}
+.bs-g i.s{border-radius:4px;margin:0;background:#8a98a8}
+
+/* hinge guess */
+.hg{flex:1;background:#fff4e0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#2b1d0e}
+.hg b{font:800 64px/1 ui-sans-serif,system-ui;letter-spacing:-.04em}
+.hg span{font:600 12px/1 ui-sans-serif,system-ui;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+.hg-k{flex:1;background:#ffb547;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:16px}
+.hg-k i{border-radius:12px;background:rgba(255,255,255,.55);font:800 20px/1 ui-sans-serif,system-ui;display:flex;align-items:center;justify-content:center;font-style:normal;color:#2b1d0e}
+
+/* pocket console */
+.pc-lcd{flex:1;background:#3d4a2a;padding:14px;display:flex}
+.pc-lcd div{flex:1;background:#9bbc0f;border-radius:4px;position:relative;overflow:hidden;box-shadow:inset 0 0 0 3px #8bac0f}
+.pc-lcd .gnd{position:absolute;left:0;right:0;bottom:0;height:18%;background:repeating-linear-gradient(90deg,#306230 0 12px,#0f380f 12px 24px)}
+.pc-lcd .hero{position:absolute;left:24%;bottom:18%;width:9%;aspect-ratio:.8;background:#0f380f;box-shadow:0 -8px 0 -2px #0f380f}
+.pc-lcd .blk{position:absolute;width:10%;aspect-ratio:1;background:#306230;box-shadow:inset 0 0 0 3px #0f380f}
+.pc-lcd .cl{position:absolute;height:6%;width:18%;border-radius:99px;background:#8bac0f;box-shadow:inset 0 0 0 2px #306230}
+.pc-body{flex:1;background:linear-gradient(180deg,#d6d1c8,#c3bdb2);position:relative}
+.pc-dpad{position:absolute;left:14%;top:50%;width:26%;aspect-ratio:1;transform:translateY(-50%);background:linear-gradient(#26262a,#26262a) center/34% 100% no-repeat,linear-gradient(#26262a,#26262a) center/100% 34% no-repeat}
+.pc-ab{position:absolute;right:12%;top:50%;transform:translateY(-50%) rotate(-24deg);display:flex;gap:10px}
+.pc-ab i{width:44px;height:44px;border-radius:50%;background:#9a2448;box-shadow:inset 0 -4px 0 rgba(0,0,0,.25)}
+.pc-ss{position:absolute;left:50%;bottom:12%;transform:translateX(-50%);display:flex;gap:12px}
+.pc-ss i{width:34px;height:9px;border-radius:5px;background:#8d877d;transform:rotate(-24deg)}
+
+/* duo-man */
+.dm{flex:1;background:linear-gradient(160deg,#c9cdd3,#9aa1ab);display:flex;flex-direction:column;padding:18px;gap:12px;color:#1c2330}
+.dm-win{flex:1;border-radius:10px;background:#1a1c22;padding:12px;display:flex;flex-direction:column;justify-content:center;gap:8px;box-shadow:inset 0 2px 8px rgba(0,0,0,.6)}
+.dm-cas{border-radius:8px;background:linear-gradient(180deg,#f2efe6,#dcd6c6);padding:10px;display:flex;flex-direction:column;gap:6px}
+.dm-lbl{height:12px;border-radius:2px;background:linear-gradient(90deg,#e8553b 0 30%,#f6c343 30% 60%,#3aa3a0 60%)}
+.dm-reels{display:flex;justify-content:space-between;align-items:center;background:#2a2c33;border-radius:6px;padding:6px 16px}
+.dm-reels i{width:30px;height:30px;border-radius:50%;background:repeating-conic-gradient(#f2efe6 0 20deg,#6b5a45 20deg 60deg);box-shadow:0 0 0 5px #3b2a1a}
+.dm-t{font:700 12px/1.2 ui-sans-serif,system-ui;letter-spacing:.04em;display:flex;justify-content:space-between}
+.dm-t span{opacity:.6;font-weight:600}
+.dm-btns{display:flex;gap:8px}
+.dm-btns i{flex:1;height:36px;border-radius:6px;background:linear-gradient(180deg,#eef0f3,#b9bec6);box-shadow:inset 0 -3px 0 rgba(0,0,0,.2);font:700 13px/36px ui-sans-serif;text-align:center;font-style:normal;color:#1c2330}
+.dm-btns i.p{background:linear-gradient(180deg,#ff8a3d,#e0561c);color:#fff}
+.dm-slot{flex:1;border-radius:10px;border:3px dashed rgba(28,35,48,.35);display:flex;align-items:center;justify-content:center;font:700 12px/1 ui-sans-serif;letter-spacing:.14em;color:rgba(28,35,48,.55)}
+
+/* critterdex */
+.cx{flex:1;background:#c8102e;padding:16px;display:flex;flex-direction:column;gap:10px}
+.cx-scr{flex:1;border-radius:8px;background:#dfe9d0;box-shadow:inset 0 0 0 5px #f4f4f4,inset 0 0 0 7px #1d1d1d;display:flex;align-items:center;justify-content:center;position:relative}
+.cx-scr span{position:absolute;left:14px;top:12px;font:700 11px/1 ui-monospace,monospace;color:#2f3a24}
+.cx-lights{display:flex;gap:8px;align-items:center}
+.cx-lights i{width:14px;height:14px;border-radius:50%;background:#ffcc00}
+.cx-lights i:first-child{width:30px;height:30px;background:radial-gradient(circle at 35% 35%,#bfe7ff,#1b8fdc);box-shadow:0 0 0 4px #fff}
+.cx-lights i:nth-child(3){background:#35c759}
+.cx-txt{flex:1;border-radius:8px;background:#16324f;padding:14px;display:flex;flex-direction:column;gap:9px}
+.cx-txt b{font:700 15px/1 ui-monospace,monospace;color:#bff0ff}
+.cx-txt i{height:7px;border-radius:4px;background:rgba(191,240,255,.35)}
+
+/* e-ink reader */
+.rd{flex:1;background:#ecebe4;padding:28px 24px 18px;display:flex;flex-direction:column;gap:9px;color:#222}
+.rd h6{margin:0 0 6px;font:600 17px/1.2 Georgia,serif;color:#222}
+.rd i{height:6px;border-radius:2px;background:#9b9a93}
+.rd em{margin-top:auto;font:12px/1 Georgia,serif;color:#777;text-align:center;font-style:normal}
+.rd .dc{float:left}
+
+/* sketchbook */
+.sk{flex:1;background:#fbf8f1;display:flex;align-items:center;justify-content:center}
+.sk-tools{flex:1;background:#efe9dd;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:16px}
+.sk-sw{display:flex;gap:10px;justify-content:center}
+.sk-sw i{width:34px;height:34px;border-radius:50%;background:var(--c);box-shadow:inset 0 -3px 0 rgba(0,0,0,.18)}
+.sk-sw i.on{box-shadow:0 0 0 3px #efe9dd,0 0 0 5px #222}
+.sk-br{display:flex;gap:10px;justify-content:center}
+.sk-br i{width:52px;height:14px;border-radius:7px;background:#d9d1c1}
+.sk-br i.on{background:#2b2b2b}
+
+/* fold cards */
+.fc{flex:1;background:#f7f1ff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:18px;color:#2b1f47}
+.fc small{font:700 11px/1 ui-sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.55}
+.fc b{font:600 30px/1.1 Georgia,serif;text-align:center}
+.fc.ans{background:#6b46f0;color:#fff}
+.fc-btn{display:flex;gap:8px}
+.fc-btn i{padding:9px 16px;border-radius:99px;background:rgba(255,255,255,.2);font:700 12px/1 ui-sans-serif;font-style:normal}
+.fc-btn i:last-child{background:#fff;color:#6b46f0}
+
+/* list & detail */
+.ld{flex:1;background:#f2f2f7;display:flex;flex-direction:column}
+.ld-bar{padding:40px 16px 10px;font:800 22px/1 -apple-system,system-ui;color:#111}
+.ld-row{margin:0 10px;padding:11px 12px;border-radius:10px;display:flex;gap:10px;align-items:center}
+.ld-row.sel{background:#0a84ff}
+.ld-row i{width:28px;height:28px;border-radius:50%;background:var(--c);flex:none}
+.ld-row div{flex:1;display:flex;flex-direction:column;gap:5px}
+.ld-row b{height:7px;border-radius:4px;background:#1c1c1e;width:60%}
+.ld-row s{height:6px;border-radius:4px;background:#a1a1a6;width:90%;text-decoration:none}
+.ld-row.sel b,.ld-row.sel s{background:rgba(255,255,255,.85)}
+.ld-det{flex:1;background:#fff;padding:40px 22px 16px;display:flex;flex-direction:column;gap:10px}
+.ld-det h6{margin:0;font:800 19px/1.2 -apple-system,system-ui;color:#111}
+.ld-det i{height:6px;border-radius:3px;background:#c7c7cc}
+.ld-det .img{height:34%;border-radius:12px;background:linear-gradient(135deg,#ffb86b,#ff5e62 60%,#7b4397)}
+
+/* watch above, play below */
+.vd{flex:1;background:#000;display:flex;flex-direction:column;justify-content:center;position:relative}
+.vd-frame{position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,#ffd98a 0 8%,transparent 9%),linear-gradient(180deg,#27406b 0%,#f08a5d 62%,#2a1a33 63%,#120c1a 100%)}
+.vd-bar{position:absolute;left:16px;right:16px;bottom:14px;height:4px;border-radius:2px;background:rgba(255,255,255,.3)}
+.vd-bar::before{content:"";position:absolute;left:0;top:0;bottom:0;width:38%;border-radius:2px;background:#fff}
+.vd-ctl{flex:1;background:#1c1c1e;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:18px}
+.vd-btns{display:flex;justify-content:center;gap:26px;align-items:center}
+.vd-btns i{width:34px;height:34px;border-radius:50%;background:#3a3a3c}
+.vd-btns i.pl{width:58px;height:58px;background:#fff}
+.vd-chat{display:flex;flex-direction:column;gap:7px}
+.vd-chat i{height:8px;border-radius:4px;background:#3a3a3c}
+
+:root{--bg:#0d0d0f;--p1:#151518;--p2:#1c1c20;--p3:#26262b;--ink:#efece6;--ink2:#a9a59c;--ink3:#6d6a64;--line:#2a2a2f;--amber:#ffb03a;--amber-soft:rgba(255,176,58,.14);
+  --cond:"IBM Plex Sans Condensed",system-ui,sans-serif;--sans:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+body{background:var(--bg);color:var(--ink);font:14px/1.45 var(--sans)}
+.mono{font-family:var(--mono)}
+.lbl{font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+.bar{display:flex;align-items:center;gap:22px;height:56px;padding:0 32px;border-bottom:1px solid var(--line)}
+.brand{font:600 15px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.brand i{width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 12px var(--amber)}
+.bar nav{display:flex;gap:4px;margin-left:20px}
+.bar nav span{padding:7px 12px;border-radius:6px;font:500 12px/1 var(--mono);letter-spacing:.06em;color:var(--ink2)}
+.bar nav span.on{background:var(--p3);color:var(--ink)}
+.bar .r{margin-left:auto;display:flex;gap:16px;align-items:center;font:500 12px/1 var(--mono);color:var(--ink2)}
+.key{display:inline-flex;min-width:22px;height:22px;align-items:center;justify-content:center;border-radius:5px;border:1px solid var(--line);background:var(--p2);font:500 11px/1 var(--mono);color:var(--ink2);padding:0 5px}
+/* film sprockets */
+.sprk{height:12px;background:radial-gradient(circle at 50% 50%,var(--bg) 0 3px,transparent 3.5px) 0 0/18px 12px repeat-x,var(--p1)}
+.frame{position:relative;background:radial-gradient(ellipse at 50% 55%,#2a2a30 0%,#18181b 70%);border-radius:6px;overflow:hidden}
+.frame.best{box-shadow:0 0 0 2px var(--amber),0 0 40px -8px rgba(255,176,58,.45)}
+.fm{display:inline-flex;gap:2px}
+.fm i{width:5px;height:12px;border-radius:1px;background:var(--p3)}
+.fm i.b{background:var(--ink2)}.fm i.a{background:var(--amber)}
+
+body{width:390px;overflow-x:hidden}
+.mb{display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 16px;border-bottom:1px solid var(--line)}
+.mb .brand{font-size:12.5px}
+.mch{padding:16px 16px 10px;display:flex;align-items:flex-end;gap:14px}
+.mch .no{font:600 60px/.8 var(--cond);color:var(--amber)}
+.mch h1{margin:0;font:600 38px/.95 var(--cond)}
+.mch .lbl{display:block;margin-bottom:6px}
+.snap{display:flex;gap:10px;padding:0 16px;overflow:hidden;margin-left:-281px}
+.snap .panel{flex:none;width:300px;display:flex;flex-direction:column;gap:8px}
+.snap .frame{height:300px;display:flex;align-items:center;justify-content:center}
+.snap .panel.dim{opacity:.35}
+.ph{display:flex;align-items:center;gap:8px;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.ph b{color:var(--amber)}
+.ph .fm{margin-left:auto}
+.tag{position:absolute;z-index:3;right:10px;top:10px;font:600 10px/1 var(--mono);letter-spacing:.12em;color:#1a1204;background:var(--amber);padding:5px 7px;border-radius:3px}
+.dots{display:flex;justify-content:center;gap:6px;padding:14px 0 4px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--p3)}
+.dots i.on{width:20px;border-radius:3px;background:var(--amber)}
+.mcap{padding:6px 16px 0;font-size:15px;line-height:1.5}
+.sheet{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:16px 16px 0}
+.sheet .frame{height:92px}
+.sheet .cap{position:absolute;left:6px;bottom:5px;font:500 9px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.mfoot{position:fixed;left:0;bottom:0;width:390px;display:flex;gap:8px;padding:10px 16px 18px;background:linear-gradient(180deg,rgba(13,13,15,0),var(--bg) 30%)}
+.mfoot span{flex:1;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--p2);font:500 12.5px/1 var(--mono);color:var(--ink2)}
+.mfoot span.n{flex:1.6;background:var(--ink);color:var(--bg)}
+</style></head>
+<body><div class="mb"><span class="brand"><i></i>Duo Explorer</span><span class="progress" style="display:flex;gap:3px"><i style="width:12px;height:3px;border-radius:2px;background:var(--amber)"></i><i style="width:12px;height:3px;border-radius:2px;background:var(--p3)"></i><i style="width:12px;height:3px;border-radius:2px;background:var(--p3)"></i><i style="width:12px;height:3px;border-radius:2px;background:var(--p3)"></i><i style="width:12px;height:3px;border-radius:2px;background:var(--p3)"></i><i style="width:12px;height:3px;border-radius:2px;background:var(--p3)"></i><i style="width:12px;height:3px;border-radius:2px;background:var(--p3)"></i><i style="width:12px;height:3px;border-radius:2px;background:var(--p3)"></i><i style="width:12px;height:3px;border-radius:2px;background:var(--p3)"></i><i style="width:12px;height:3px;border-radius:2px;background:var(--p3)"></i><i style="width:12px;height:3px;border-radius:2px;background:var(--p3)"></i><i style="width:12px;height:3px;border-radius:2px;background:var(--p3)"></i></span></div>
+<div class="mch"><span class="no">01</span><div><span class="lbl">Part I · Music</span><h1>Cajón</h1></div></div>
+<div class="snap"><div class="panel dim"><div class="ph">SC 05 <b>Book</b> <span class="fm"><i class="b"></i><i class="b"></i><i class=""></i></span></div><div class="frame "><div class="fit" style="width:270px;height:280px;display:flex;align-items:center;justify-content:center"><div style="zoom:0.4500"><div class="duo p-book "><i class="floor"></i><div class="sh l"><div class="scr"><div class="half"><div class="cj-top"><div class="cj-face wood"><i class="cj-wires"></i><i class="cj-ring"></i><span class="cj-name">CAJÓN</span></div>
+    <div class="cj-bar"><span class="cj-chip">Play along</span><span class="cj-chip o">The first beat</span><span class="cj-chip o">84 bpm</span></div>
+    <div class="cj-lane"><b class="on">B</b><b class="x">·</b><b>s</b><b class="x">·</b><b>B</b><b class="x">·</b><b>s</b><b class="x">·</b></div></div></div></div><i class="glare"></i></div><i class="spine"></i><div class="sh r"><div class="scr"><div class="half"><div class="cj-plate">
+    <div class="cj-pad wood"><span>L · ACCENT</span></div><div class="cj-pad wood"><span>R · ACCENT</span></div>
+    <div class="cj-pad wood hit"><span>L · SLAP</span></div><div class="cj-pad wood"><span>R · SLAP</span></div>
+    <div class="cj-pad wood"><span>L · BASS</span></div><div class="cj-pad wood"><span>R · BASS</span></div></div></div></div><i class="cam" style="left:40px"></i></div></div></div></div></div></div><div class="panel "><div class="ph">SC 06 <b>Table</b> <span class="fm"><i class="a"></i><i class="a"></i><i class="a"></i></span></div><div class="frame best"><span class="tag">★ BUILT FOR THIS</span><div class="fit" style="width:270px;height:280px;display:flex;align-items:center;justify-content:center"><div style="zoom:0.5109"><div class="duo p-table "><i class="floor"></i><div class="sh t"><div class="scr"><div class="half"><div class="cj-top"><div class="cj-face wood"><i class="cj-wires"></i><i class="cj-ring"></i><span class="cj-name">CAJÓN</span></div>
+    <div class="cj-bar"><span class="cj-chip">Play along</span><span class="cj-chip o">The first beat</span><span class="cj-chip o">84 bpm</span></div>
+    <div class="cj-lane"><b class="on">B</b><b class="x">·</b><b>s</b><b class="x">·</b><b>B</b><b class="x">·</b><b>s</b><b class="x">·</b></div></div></div></div><i class="cam" style="left:184px"></i><i class="glare"></i></div><i class="knuckle"></i><div class="sh b"><div class="scr"><div class="half"><div class="cj-plate">
+    <div class="cj-pad wood"><span>L · ACCENT</span></div><div class="cj-pad wood"><span>R · ACCENT</span></div>
+    <div class="cj-pad wood hit"><span>L · SLAP</span></div><div class="cj-pad wood"><span>R · SLAP</span></div>
+    <div class="cj-pad wood"><span>L · BASS</span></div><div class="cj-pad wood"><span>R · BASS</span></div></div></div></div></div></div></div></div></div></div><div class="panel dim"><div class="ph">SC 01 <b>Closed</b> <span class="fm"><i class="b"></i><i class=""></i><i class=""></i></span></div><div class="frame "><div class="fit" style="width:270px;height:280px;display:flex;align-items:center;justify-content:center"><div style="zoom:0.7368"><div class="duo p-closed "><div class="sh"><div class="scr"><div style="flex:1;display:flex;flex-direction:column;background:#1c130d"><div class="cj-strip wood"><i class="cj-wires" style="top:20%;height:26%"></i></div><div class="cj-plate one"><div class="cj-pad wood hit"><span>TAP · SLAP HIGH, BASS LOW</span></div></div></div></div><i class="island"></i><i class="glare"></i></div></div></div></div></div></div></div>
+<div class="dots"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i></div>
+<p class="mcap">The bottom half is the plate and the fold is its top edge: slap near the hinge, bass lower down. The top half shows the instrument and the play-along lane.</p>
+<div class="sheet"><div class="frame "><div class="fit" style="width:100px;height:76px;display:flex;align-items:center;justify-content:center"><div style="zoom:0.2000"><div class="duo p-closed "><div class="sh"><div class="scr"><div style="flex:1;display:flex;flex-direction:column;background:#1c130d"><div class="cj-strip wood"><i class="cj-wires" style="top:20%;height:26%"></i></div><div class="cj-plate one"><div class="cj-pad wood hit"><span>TAP · SLAP HIGH, BASS LOW</span></div></div></div></div><i class="island"></i><i class="glare"></i></div></div></div></div><span class="cap">01 Closed</span></div><div class="frame "><div class="fit" style="width:100px;height:76px;display:flex;align-items:center;justify-content:center"><div style="zoom:0.2533"><div class="duo p-closed-landscape "><div class="sh"><div class="scr"><div class="cj-land"><div class="cj-plate thumbs"><div class="cj-pad wood"><span>L · SLAP</span></div><div class="cj-pad wood hit"><span>L · BASS</span></div></div><div class="mid"><div class="cj-face wood" style="flex:1"><i class="cj-wires"></i></div><div class="cj-lane"><b class="on">B</b><b>s</b><b>B</b><b>s</b></div></div><div class="cj-plate thumbs"><div class="cj-pad wood"><span>R · SLAP</span></div><div class="cj-pad wood"><span>R · BASS</span></div></div></div></div><i class="island"></i><i class="glare"></i></div></div></div></div><span class="cap">02 Landscape</span></div><div class="frame "><div class="fit" style="width:100px;height:76px;display:flex;align-items:center;justify-content:center"><div style="zoom:0.1667"><div class="duo p-open "><div class="sh"><div class="scr"><div class="half"><div class="cj-top"><div class="cj-face wood"><i class="cj-wires"></i><i class="cj-ring"></i><span class="cj-name">CAJÓN</span></div>
+    <div class="cj-bar"><span class="cj-chip">Play along</span><span class="cj-chip o">The first beat</span><span class="cj-chip o">84 bpm</span></div>
+    <div class="cj-lane"><b class="on">B</b><b class="x">·</b><b>s</b><b class="x">·</b><b>B</b><b class="x">·</b><b>s</b><b class="x">·</b></div></div></div><div class="half"><div class="cj-plate">
+    <div class="cj-pad wood"><span>L · ACCENT</span></div><div class="cj-pad wood"><span>R · ACCENT</span></div>
+    <div class="cj-pad wood hit"><span>L · SLAP</span></div><div class="cj-pad wood"><span>R · SLAP</span></div>
+    <div class="cj-pad wood"><span>L · BASS</span></div><div class="cj-pad wood"><span>R · BASS</span></div></div></div><i class="crease v"></i></div><i class="cam" style="left:150px"></i><i class="glare"></i></div></div></div></div><span class="cap">03 Open</span></div><div class="frame "><div class="fit" style="width:100px;height:76px;display:flex;align-items:center;justify-content:center"><div style="zoom:0.1267"><div class="duo p-open-portrait "><div class="sh"><div class="scr col"><div class="half"><div class="cj-top"><div class="cj-face wood"><i class="cj-wires"></i><i class="cj-ring"></i><span class="cj-name">CAJÓN</span></div>
+    <div class="cj-bar"><span class="cj-chip">Play along</span><span class="cj-chip o">The first beat</span><span class="cj-chip o">84 bpm</span></div>
+    <div class="cj-lane"><b class="on">B</b><b class="x">·</b><b>s</b><b class="x">·</b><b>B</b><b class="x">·</b><b>s</b><b class="x">·</b></div></div></div><div class="half"><div class="cj-plate">
+    <div class="cj-pad wood"><span>L · ACCENT</span></div><div class="cj-pad wood"><span>R · ACCENT</span></div>
+    <div class="cj-pad wood hit"><span>L · SLAP</span></div><div class="cj-pad wood"><span>R · SLAP</span></div>
+    <div class="cj-pad wood"><span>L · BASS</span></div><div class="cj-pad wood"><span>R · BASS</span></div></div></div><i class="crease h"></i></div><i class="cam" style="left:184px"></i><i class="glare"></i></div></div></div></div><span class="cap">04 Portrait</span></div><div class="frame "><div class="fit" style="width:100px;height:76px;display:flex;align-items:center;justify-content:center"><div style="zoom:0.1667"><div class="duo p-book "><i class="floor"></i><div class="sh l"><div class="scr"><div class="half"><div class="cj-top"><div class="cj-face wood"><i class="cj-wires"></i><i class="cj-ring"></i><span class="cj-name">CAJÓN</span></div>
+    <div class="cj-bar"><span class="cj-chip">Play along</span><span class="cj-chip o">The first beat</span><span class="cj-chip o">84 bpm</span></div>
+    <div class="cj-lane"><b class="on">B</b><b class="x">·</b><b>s</b><b class="x">·</b><b>B</b><b class="x">·</b><b>s</b><b class="x">·</b></div></div></div></div><i class="glare"></i></div><i class="spine"></i><div class="sh r"><div class="scr"><div class="half"><div class="cj-plate">
+    <div class="cj-pad wood"><span>L · ACCENT</span></div><div class="cj-pad wood"><span>R · ACCENT</span></div>
+    <div class="cj-pad wood hit"><span>L · SLAP</span></div><div class="cj-pad wood"><span>R · SLAP</span></div>
+    <div class="cj-pad wood"><span>L · BASS</span></div><div class="cj-pad wood"><span>R · BASS</span></div></div></div></div><i class="cam" style="left:40px"></i></div></div></div></div><span class="cap">05 Book</span></div><div class="frame best"><div class="fit" style="width:100px;height:76px;display:flex;align-items:center;justify-content:center"><div style="zoom:0.1387"><div class="duo p-table "><i class="floor"></i><div class="sh t"><div class="scr"><div class="half"><div class="cj-top"><div class="cj-face wood"><i class="cj-wires"></i><i class="cj-ring"></i><span class="cj-name">CAJÓN</span></div>
+    <div class="cj-bar"><span class="cj-chip">Play along</span><span class="cj-chip o">The first beat</span><span class="cj-chip o">84 bpm</span></div>
+    <div class="cj-lane"><b class="on">B</b><b class="x">·</b><b>s</b><b class="x">·</b><b>B</b><b class="x">·</b><b>s</b><b class="x">·</b></div></div></div></div><i class="cam" style="left:184px"></i><i class="glare"></i></div><i class="knuckle"></i><div class="sh b"><div class="scr"><div class="half"><div class="cj-plate">
+    <div class="cj-pad wood"><span>L · ACCENT</span></div><div class="cj-pad wood"><span>R · ACCENT</span></div>
+    <div class="cj-pad wood hit"><span>L · SLAP</span></div><div class="cj-pad wood"><span>R · SLAP</span></div>
+    <div class="cj-pad wood"><span>L · BASS</span></div><div class="cj-pad wood"><span>R · BASS</span></div></div></div></div></div></div></div></div><span class="cap">06 Table</span></div></div>
+<div class="mfoot"><span>← 12</span><span class="n">Next · Crate Sampler →</span></div></body></html>

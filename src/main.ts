@@ -23,7 +23,7 @@ for (const cat of CATEGORIES) {
   const h = document.createElement("h2");
   h.textContent = CATEGORY_LABEL[cat];
   const p = document.createElement("p");
-  p.className = "blurb";
+  p.className = "app-blurb";
   p.textContent = CATEGORY_BLURB[cat];
   catalog.append(h, p);
   for (const ex of items) {
@@ -39,20 +39,20 @@ for (const cat of CATEGORIES) {
 const poseButtons = new Map<PoseId, HTMLButtonElement>();
 for (const id of POSE_IDS) {
   const b = document.createElement("button");
-  b.innerHTML = `${POSE_ICONS[id]}<span>${POSES[id].label}</span><span class="best"></span>`;
+  b.innerHTML = `${POSE_ICONS[id]}<span>${POSES[id].label}</span><span class="app-best"></span>`;
   b.title = POSES[id].holding;
   b.onclick = () => duo.setPose(id);
   poseButtons.set(id, b);
   poseBar.append(b);
 }
 const hingeRow = document.createElement("label");
-hingeRow.className = "hinge";
+hingeRow.className = "app-hinge";
 hingeRow.innerHTML = `Hinge <input type="range" min="30" max="175" step="1" aria-label="Hinge angle"><output></output>`;
 const hingeInput = hingeRow.querySelector("input")!;
 const hingeOut = hingeRow.querySelector("output")!;
 hingeInput.oninput = () => duo.setHinge(Number(hingeInput.value));
 const regions = document.createElement("label");
-regions.className = "toggle";
+regions.className = "app-toggle";
 regions.innerHTML = `<input type="checkbox"> Show reserved regions`;
 regions.querySelector("input")!.onchange = (e) => host.classList.toggle("show-regions", (e.target as HTMLInputElement).checked);
 poseBar.append(hingeRow, regions);
@@ -66,20 +66,20 @@ function renderPanel(): void {
     return `<li><button data-pose="${id}" aria-current="${id === pose.id}"><b>${POSES[id].label}</b><span>${text}</span></button></li>`;
   }).join("");
   const credits = example.credits?.length
-    ? `<h3>Inspired by</h3><ul class="credits">${example.credits
+    ? `<h3>Inspired by</h3><ul class="app-credits">${example.credits
         .map((c) => `<li><a href="${c.url}" target="_blank" rel="noopener">${c.who}</a> — ${c.what}</li>`)
         .join("")}</ul>`
     : "";
   panel.innerHTML = `
-    <span class="chip">${CATEGORY_LABEL[example.category]}</span>
+    <span class="app-chip">${CATEGORY_LABEL[example.category]}</span>
     <h1>${example.title}</h1>
-    <p class="summary">${example.summary}</p>
-    ${example.principle ? `<div class="principle">${example.principle}</div>` : ""}
+    <p class="app-summary">${example.summary}</p>
+    ${example.principle ? `<div class="app-principle">${example.principle}</div>` : ""}
     <h3>In each pose</h3>
     <ol>${rows}</ol>
     ${credits}
     <h3>Right now</h3>
-    <p class="facts">${pose.label} · ${pose.display} display · ${pose.size.width}/${pose.size.height}${
+    <p class="app-facts">${pose.label} · ${pose.display} display · ${pose.size.width}/${pose.size.height}${
       halves ? ` · halves ${halves.start}/${halves.end}` : ""
     }${pose.adjustable ? ` · hinge ${hinge}°` : ""}</p>`;
   for (const b of panel.querySelectorAll<HTMLButtonElement>("ol button")) {
@@ -92,7 +92,7 @@ function syncChrome(): void {
   const { pose, hinge } = duo.current;
   for (const [id, b] of poseButtons) {
     b.setAttribute("aria-pressed", String(id === pose.id));
-    b.querySelector(".best")!.textContent = id === example.bestPose ? "best" : "";
+    b.querySelector(".app-best")!.textContent = id === example.bestPose ? "best" : "";
   }
   hingeRow.hidden = !pose.adjustable;
   hingeInput.value = String(hinge);
@@ -115,6 +115,9 @@ duo.onChange((state) => {
 
 function open(id: string, poseId?: PoseId): void {
   instance?.destroy();
+  // Null it before setPose: the pose listener would otherwise render the
+  // instance we just destroyed.
+  instance = null;
   for (const s of Object.values(duo.screens)) s.replaceChildren();
   example = byId(id) ?? EXAMPLES[0]!;
   const target = poseId ?? example.bestPose;
