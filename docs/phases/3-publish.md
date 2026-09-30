@@ -1,6 +1,7 @@
 ---
 status: partial
 since: 2026-09-30
+issue: 2
 note: "Tests, typecheck, roadmap check and build run in Actions; every push to main deploys to GitHub Pages. Waiting on the first green deploy."
 ---
 

@@ -1,6 +1,7 @@
 ---
 status: planned
 since: 2026-09-30
+issue: 4
 note: "Closer to the real device: drag the device itself to fold it, the Dynamic Island and outer camera drawn, vertical system bars, true proportions."
 ---
 

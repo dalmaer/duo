@@ -1,6 +1,7 @@
 ---
 status: planned
 since: 2026-09-30
+issue: 8
 note: "For each example, how you would build it natively: which iOS 27.1 API does the work."
 ---
 

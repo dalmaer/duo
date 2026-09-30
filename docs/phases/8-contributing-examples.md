@@ -1,6 +1,7 @@
 ---
 status: planned
 since: 2026-09-30
+issue: 7
 note: "A one-page guide and an issue template for adding an example, so the catalog can grow beyond what one session writes."
 ---
 

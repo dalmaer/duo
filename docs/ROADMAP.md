@@ -21,23 +21,23 @@ the code exists and has been run.
 
 | | Phase | Since | |
 | --- | --- | --- | --- |
-| 2 | [The catalog](phases/2-catalog.md) | 2026-09-30 | Twelve examples across six categories, from the posts and repos in docs/research/. Being written; each needs a pass in every pose. |
-| 3 | [Publish, and keep it honest](phases/3-publish.md) | 2026-09-30 | Tests, typecheck, roadmap check and build run in Actions; every push to main deploys to GitHub Pages. Waiting on the first green deploy. |
-| 10 | [The project builds itself](phases/10-agents-build-it.md) | 2026-09-30 | An @claude workflow answers issues and PRs; issues map to phases. Needs the CLAUDE_CODE_OAUTH_TOKEN secret before it can run. |
+| 2 | [The catalog](phases/2-catalog.md) | 2026-09-30 | Twelve examples across six categories, from the posts and repos in docs/research/. Being written; each needs a pass in every pose. · [#1](https://github.com/dalmaer/duo/issues/1) |
+| 3 | [Publish, and keep it honest](phases/3-publish.md) | 2026-09-30 | Tests, typecheck, roadmap check and build run in Actions; every push to main deploys to GitHub Pages. Waiting on the first green deploy. · [#2](https://github.com/dalmaer/duo/issues/2) |
+| 10 | [The project builds itself](phases/10-agents-build-it.md) | 2026-09-30 | An @claude workflow answers issues and PRs; issues map to phases. Needs the CLAUDE_CODE_OAUTH_TOKEN secret before it can run. · [#9](https://github.com/dalmaer/duo/issues/9) |
 
 ## Designed <sub>1</sub>
 
 | | Phase | Since | |
 | --- | --- | --- | --- |
-| 4 | [Design direction](phases/4-design-direction.md) | 2026-09-30 | Three directions — Lab bench, Gallery wall, Storyboard — on the isocan canvas and in docs/design/. Waiting on a choice. |
+| 4 | [Design direction](phases/4-design-direction.md) | 2026-09-30 | Three directions — Lab bench, Gallery wall, Storyboard — on the isocan canvas and in docs/design/. Waiting on a choice. · [#3](https://github.com/dalmaer/duo/issues/3) |
 
 ## Not started <sub>5</sub>
 
 | | Phase | Since | |
 | --- | --- | --- | --- |
-| 5 | [Fidelity](phases/5-fidelity.md) | 2026-09-30 | Closer to the real device: drag the device itself to fold it, the Dynamic Island and outer camera drawn, vertical system bars, true proportions. |
-| 6 | [On a real Duo](phases/6-on-a-real-duo.md) | 2026-09-30 | Open the explorer on an actual iPhone Duo and the examples run on the device itself, following its real fold. |
-| 7 | [Sound and touch](phases/7-sound-and-touch.md) | 2026-09-30 | Audio start on iOS, multi-touch pads, and latency good enough to play the cajón in time. |
-| 8 | [Contributing examples](phases/8-contributing-examples.md) | 2026-09-30 | A one-page guide and an issue template for adding an example, so the catalog can grow beyond what one session writes. |
-| 9 | [Native notes](phases/9-native-notes.md) | 2026-09-30 | For each example, how you would build it natively: which iOS 27.1 API does the work. |
+| 5 | [Fidelity](phases/5-fidelity.md) | 2026-09-30 | Closer to the real device: drag the device itself to fold it, the Dynamic Island and outer camera drawn, vertical system bars, true proportions. · [#4](https://github.com/dalmaer/duo/issues/4) |
+| 6 | [On a real Duo](phases/6-on-a-real-duo.md) | 2026-09-30 | Open the explorer on an actual iPhone Duo and the examples run on the device itself, following its real fold. · [#5](https://github.com/dalmaer/duo/issues/5) |
+| 7 | [Sound and touch](phases/7-sound-and-touch.md) | 2026-09-30 | Audio start on iOS, multi-touch pads, and latency good enough to play the cajón in time. · [#6](https://github.com/dalmaer/duo/issues/6) |
+| 8 | [Contributing examples](phases/8-contributing-examples.md) | 2026-09-30 | A one-page guide and an issue template for adding an example, so the catalog can grow beyond what one session writes. · [#7](https://github.com/dalmaer/duo/issues/7) |
+| 9 | [Native notes](phases/9-native-notes.md) | 2026-09-30 | For each example, how you would build it natively: which iOS 27.1 API does the work. · [#8](https://github.com/dalmaer/duo/issues/8) |
 

@@ -1,6 +1,7 @@
 ---
 status: planned
 since: 2026-09-30
+issue: 6
 note: "Audio start on iOS, multi-touch pads, and latency good enough to play the cajón in time."
 ---
 

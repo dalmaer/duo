@@ -1,6 +1,7 @@
 ---
 status: partial
 since: 2026-09-30
+issue: 9
 note: "An @claude workflow answers issues and PRs; issues map to phases. Needs the CLAUDE_CODE_OAUTH_TOKEN secret before it can run."
 ---
 

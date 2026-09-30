@@ -1,6 +1,7 @@
 ---
 status: designed
 since: 2026-09-30
+issue: 3
 note: "Three directions — Lab bench, Gallery wall, Storyboard — on the isocan canvas and in docs/design/. Waiting on a choice."
 ---
 

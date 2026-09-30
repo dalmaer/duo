@@ -1,6 +1,7 @@
 ---
 status: partial
 since: 2026-09-30
+issue: 1
 note: "Twelve examples across six categories, from the posts and repos in docs/research/. Being written; each needs a pass in every pose."
 ---
 

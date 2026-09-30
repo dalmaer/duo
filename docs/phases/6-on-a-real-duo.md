@@ -1,6 +1,7 @@
 ---
 status: planned
 since: 2026-09-30
+issue: 5
 note: "Open the explorer on an actual iPhone Duo and the examples run on the device itself, following its real fold."
 ---
 
