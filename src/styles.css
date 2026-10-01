@@ -184,7 +184,13 @@ button { font: inherit; color: inherit; }
 
 .leaf {
   position: absolute;
-  transform-style: preserve-3d;
+  /* Flat, not preserve-3d: each leaf is rotated in 3D, but what is inside
+     it stays in its plane. With preserve-3d, Chromium sent real pointer
+     input to the face rather than the app inside it whenever a leaf was
+     tilted — every tap in book, table and standing missed (lessons.md, 4).
+     Flat leaves cannot hide a face by backface-visibility, so the emulator
+     says which face shows (data-shows) and swaps halfway through the turn. */
+  transform-style: flat;
   transition: transform 0.6s cubic-bezier(0.3, 0.7, 0.2, 1);
 }
 .duo[data-frame="book"] .leaf { top: 0; width: 300px; height: 380px; }
@@ -196,13 +202,16 @@ button { font: inherit; color: inherit; }
 
 .face {
   position: absolute; inset: 0;
-  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  transition: visibility 0s linear 0.3s;
   background: var(--shell);
   padding: 7px;
   box-shadow: 0 0 0 1.5px var(--shell-edge) inset;
 }
 .duo[data-frame="book"] .face.back { transform: rotateY(180deg) translateZ(0.5px); }
 .duo[data-frame="stacked"] .face.back { transform: rotateX(180deg) translateZ(0.5px); }
+.leaf[data-shows="front"] .face.back,
+.leaf[data-shows="back"] .face.front { visibility: hidden; }
+
 /* Round only the outside corners, so the pair reads as one slab when flat. */
 .duo[data-frame="book"] .start .front { border-radius: 26px 0 0 26px; padding-right: 0; }
 .duo[data-frame="book"] .end .front { border-radius: 0 26px 26px 0; padding-left: 0; }

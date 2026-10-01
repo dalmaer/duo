@@ -236,6 +236,17 @@ display's trailing edge; nothing interactive in the fold.
 **Watch Above, Play Below** *(best: table)* — Video on the standing half,
 scrubber and details on the flat half; playback continues across every pose.
 
+### 4.0 The second wave
+
+Twenty-three more, chosen by a sharper test — *does it use the fold in a way a
+flat phone cannot copy?* — are listed with their tricks and issues in
+[docs/phases/11-second-wave.md](docs/phases/11-second-wave.md): the hinge as
+an input (Accordion, Fishing, Pop-up Storybook, Anatomy Layers), opening and
+closing as the move (Music Box, Etch-a-sketch, Pocket Pal, Instant Camera),
+the standing half as a wall (Pinball, Poker, Chomp, Typewriter), and the outer
+display facing someone else (Translator, Teleprompter, Subject Preview, Quiz
+Buzzers).
+
 ### 4.1 The user's four seeds
 
 The brief named four ideas to flesh out; each is in the catalog:

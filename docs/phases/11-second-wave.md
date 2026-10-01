@@ -1,8 +1,8 @@
 ---
-status: partial
+status: built
 since: 2026-09-30
 issue: 19
-note: "Twenty-three ideas in four waves, each with its own issue. Wave A is being built."
+note: "All twenty-three built, each handling all seven poses, with no runtime errors in any pose and real taps reaching them in every pose. Not yet played through by a person; sound unheard by anyone but its synthesis code."
 ---
 
 # The second wave of examples

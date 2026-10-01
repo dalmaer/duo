@@ -14,7 +14,7 @@ standing top half — [#cajon/table](https://dalmaer.github.io/duo/#cajon/table)
 
 | Music | Games | Retro | Productivity | Learning | Patterns |
 | --- | --- | --- | --- | --- | --- |
-| Cajón<br>Crate Sampler | Battleships<br>Hinge Guess | Pocket Console<br>Duo-Man<br>Critterdex | E-ink Reader<br>Sketchbook | Fold Cards | List and Detail<br>Watch Above, Play Below |
+| Cajón<br>Crate Sampler<br>Accordion<br>Music Box<br>DJ Decks | Battleships<br>Hinge Guess<br>Pinball<br>Poker<br>Chomp<br>Fishing<br>Mini-golf | Pocket Console<br>Duo-Man<br>Critterdex<br>Split-flap Clock<br>Etch-a-sketch<br>Typewriter<br>Pocket Pal<br>Instant Camera | E-ink Reader<br>Sketchbook<br>Translator<br>Teleprompter<br>Recipe<br>Planner | Fold Cards<br>Pop-up Storybook<br>Quiz Buzzers<br>Anatomy Layers | List and Detail<br>Watch Above, Play Below<br>Subject Preview<br>Laptop Editor<br>Overlay Map |
 
 Every example says what it does in each pose, names the Apple guideline it
 demonstrates, and credits whoever had the idea first. See [SPEC.md](SPEC.md)

@@ -20,6 +20,17 @@ import { flashcardsExample } from "./flashcards.ts";
 import { mailExample } from "./mail.ts";
 import { videoExample } from "./video.ts";
 import { translatorExample } from "./translator.ts";
+import { recipeExample } from "./recipe.ts";
+import { plannerExample } from "./planner.ts";
+import { laptopEditorExample } from "./laptop-editor.ts";
+import { overlayMapExample } from "./overlay-map.ts";
+import { anatomyExample } from "./anatomy.ts";
+import { chompExample } from "./chomp.ts";
+import { fishingExample } from "./fishing.ts";
+import { miniGolfExample } from "./mini-golf.ts";
+import { etchSketchExample } from "./etch-sketch.ts";
+import { typewriterExample } from "./typewriter.ts";
+import { djDecksExample } from "./dj-decks.ts";
 import { virtualPetExample } from "./virtual-pet.ts";
 import { instantCameraExample } from "./instant-camera.ts";
 import { teleprompterExample } from "./teleprompter.ts";
@@ -37,26 +48,37 @@ export const EXAMPLES: Example[] = [
   samplerExample,
   accordionExample,
   musicBoxExample,
+  djDecksExample,
   battleshipsExample,
   hingeGuessExample,
   pinballExample,
   pokerExample,
+  chompExample,
+  fishingExample,
+  miniGolfExample,
   pocketConsoleExample,
   duoManExample,
   critterdexExample,
   splitFlapExample,
+  etchSketchExample,
+  typewriterExample,
   virtualPetExample,
   instantCameraExample,
   readerExample,
   sketchbookExample,
+  recipeExample,
+  plannerExample,
   translatorExample,
   teleprompterExample,
   flashcardsExample,
   popupBookExample,
   quizBuzzersExample,
+  anatomyExample,
   mailExample,
   videoExample,
   subjectPreviewExample,
+  laptopEditorExample,
+  overlayMapExample,
 ];
 
 export function byId(id: string): Example | undefined {

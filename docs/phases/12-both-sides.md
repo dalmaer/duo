@@ -1,8 +1,8 @@
 ---
-status: partial
+status: built
 since: 2026-09-30
 issue: 20
-note: "Built: the accessory flag and state, Turn around, and the standing pose, with the Translator using both sides. Not yet checked on a phone; the other three wave C examples are next."
+note: "Accessory flag and state, Turn around, and the standing pose, used by the Translator, Teleprompter, Subject preview and Quiz buzzers. Real taps reach the outer display when turned round. Not yet checked on a phone."
 ---
 
 # Both sides at once

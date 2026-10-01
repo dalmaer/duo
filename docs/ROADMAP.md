@@ -10,7 +10,7 @@ describes. Run `npm run roadmap` after changing one.
 date: people have used the thing and it held. *Built* is the weaker claim —
 the code exists and has been run.
 
-## Built, not yet lived in <sub>4</sub>
+## Built, not yet lived in <sub>6</sub>
 
 | | Phase | Since | |
 | --- | --- | --- | --- |
@@ -18,14 +18,14 @@ the code exists and has been run.
 | 1 | [The example contract, and Cajón](phases/1-example-contract.md) | 2026-09-30 | Example contract in src/core/example.ts and the reference example, Cajón, playable in all six poses. |
 | 2 | [The catalog](phases/2-catalog.md) | 2026-09-30 | All twelve examples built and checked in their best pose on desktop and phone widths; each describes all six poses. Not yet played through by a person in every pose, which is what lived-in needs. · [#1](https://github.com/dalmaer/duo/issues/1) |
 | 3 | [Publish, and keep it honest](phases/3-publish.md) | 2026-09-30 | Every push to main is tested, built and deployed to Pages, then the live page is asked for its build stamp; the first deploy passed that check within a minute. · [#2](https://github.com/dalmaer/duo/issues/2) |
+| 11 | [The second wave of examples](phases/11-second-wave.md) | 2026-09-30 | All twenty-three built, each handling all seven poses, with no runtime errors in any pose and real taps reaching them in every pose. Not yet played through by a person; sound unheard by anyone but its synthesis code. · [#19](https://github.com/dalmaer/duo/issues/19) |
+| 12 | [Both sides at once](phases/12-both-sides.md) | 2026-09-30 | Accessory flag and state, Turn around, and the standing pose, used by the Translator, Teleprompter, Subject preview and Quiz buzzers. Real taps reach the outer display when turned round. Not yet checked on a phone. · [#20](https://github.com/dalmaer/duo/issues/20) |
 
-## Partly built <sub>3</sub>
+## Partly built <sub>1</sub>
 
 | | Phase | Since | |
 | --- | --- | --- | --- |
 | 10 | [The project builds itself](phases/10-agents-build-it.md) | 2026-09-30 | An @claude workflow answers issues and PRs; issues map to phases. Needs the CLAUDE_CODE_OAUTH_TOKEN secret before it can run. · [#9](https://github.com/dalmaer/duo/issues/9) |
-| 11 | [The second wave of examples](phases/11-second-wave.md) | 2026-09-30 | Twenty-three ideas in four waves, each with its own issue. Wave A is being built. · [#19](https://github.com/dalmaer/duo/issues/19) |
-| 12 | [Both sides at once](phases/12-both-sides.md) | 2026-09-30 | Built: the accessory flag and state, Turn around, and the standing pose, with the Translator using both sides. Not yet checked on a phone; the other three wave C examples are next. · [#20](https://github.com/dalmaer/duo/issues/20) |
 
 ## Designed <sub>1</sub>
 

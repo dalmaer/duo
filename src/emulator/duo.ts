@@ -43,9 +43,11 @@ export function transformsFor(p: Pose, hinge: number): LeafTransforms {
   const fold = 180 - hinge;
   switch (p.id) {
     case "closed":
-      return { start: "rotateY(180deg)", end: "rotateY(0deg)", device: `translateX(${-LEAF.width / 2}px)` };
+      // The 1px lifts the shut leaf just off the other one: in one plane, the
+      // browser cannot tell which is on top, and taps went to the one beneath.
+      return { start: "rotateY(180deg) translateZ(-1px)", end: "rotateY(0deg)", device: `translateX(${-LEAF.width / 2}px)` };
     case "closed-landscape":
-      return { start: "rotateX(-180deg)", end: "rotateX(0deg)", device: `translateY(${-LEAF.width / 2}px)` };
+      return { start: "rotateX(-180deg) translateZ(-1px)", end: "rotateX(0deg)", device: `translateY(${-LEAF.width / 2}px)` };
     case "open":
       return { start: "rotateY(0deg)", end: "rotateY(0deg)", device: "none" };
     case "open-portrait":
@@ -163,6 +165,11 @@ export class Duo {
     this.device.style.transform = this.facingBack ? `rotateY(180deg) ${t.device === "none" ? "" : t.device}` : t.device;
     this.leafStart.style.transform = t.start;
     this.leafEnd.style.transform = t.end;
+    // Which face of each leaf is toward the viewer. The first leaf turns its
+    // back (the outer display) to you when the device is shut; turning the
+    // device round shows the backs of both.
+    this.leafStart.dataset.shows = (pose.display === "outer") !== this.facingBack ? "back" : "front";
+    this.leafEnd.dataset.shows = this.facingBack ? "back" : "front";
     const regions = activeRegions(pose, hinge);
     for (const m of this.foldMarks) m.hidden = !regions.includes("fold");
     // Only a lit display facing the viewer takes input; a leaf facing away
