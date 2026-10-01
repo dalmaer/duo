@@ -55,7 +55,7 @@ waiting to be built are [issues labelled `example`](https://github.com/dalmaer/d
 
 Phases, each with its status in its own front matter →
 [docs/ROADMAP.md](docs/ROADMAP.md) (generated). Every unfinished phase has a
-GitHub issue. Design options live on the project's
+GitHub issue, and every issue is on the [duo project board](https://github.com/users/dalmaer/projects/1). Design options live on the project's
 [isocan](https://isocan.io) canvas (`.isocan/project.json`) and in
 [docs/design/](docs/design/). Working rules for people and agents:
 [AGENTS.md](AGENTS.md).

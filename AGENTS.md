@@ -97,7 +97,9 @@ so in place with the date and what settled it.
 **Issues map to phases.** Every phase not `built` or `lived-in` has a GitHub
 issue, and its number is the phase's `issue:`. Example ideas are issues
 labelled `example` plus their category (`music`, `games`, …). Close the issue
-when the phase is built; the phase file keeps the verdict.
+when the phase is built; the phase file keeps the verdict. Every issue goes on
+the [duo project board](https://github.com/users/dalmaer/projects/1)
+(`gh project item-add 1 --owner dalmaer --url <issue>`).
 
 **Verify before you push, and follow the push until it serves.** `npm run
 check` locally; after pushing, watch the *Deploy* workflow — it fails if the
