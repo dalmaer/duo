@@ -6,7 +6,7 @@ Every phase, by where it stands. **Derived**: the status of a phase lives
 in that phase's own front matter, so it cannot drift from what it
 describes. Run `npm run roadmap` after changing one.
 
-**0 of 11 phases lived in.** *Lived in* is a judgement, not a
+**0 of 13 phases lived in.** *Lived in* is a judgement, not a
 date: people have used the thing and it held. *Built* is the weaker claim —
 the code exists and has been run.
 
@@ -19,11 +19,12 @@ the code exists and has been run.
 | 2 | [The catalog](phases/2-catalog.md) | 2026-09-30 | All twelve examples built and checked in their best pose on desktop and phone widths; each describes all six poses. Not yet played through by a person in every pose, which is what lived-in needs. · [#1](https://github.com/dalmaer/duo/issues/1) |
 | 3 | [Publish, and keep it honest](phases/3-publish.md) | 2026-09-30 | Every push to main is tested, built and deployed to Pages, then the live page is asked for its build stamp; the first deploy passed that check within a minute. · [#2](https://github.com/dalmaer/duo/issues/2) |
 
-## Partly built <sub>1</sub>
+## Partly built <sub>2</sub>
 
 | | Phase | Since | |
 | --- | --- | --- | --- |
 | 10 | [The project builds itself](phases/10-agents-build-it.md) | 2026-09-30 | An @claude workflow answers issues and PRs; issues map to phases. Needs the CLAUDE_CODE_OAUTH_TOKEN secret before it can run. · [#9](https://github.com/dalmaer/duo/issues/9) |
+| 11 | [The second wave of examples](phases/11-second-wave.md) | 2026-09-30 | Twenty-three ideas in four waves, each with its own issue. Wave A is being built. · [#19](https://github.com/dalmaer/duo/issues/19) |
 
 ## Designed <sub>1</sub>
 
@@ -31,7 +32,7 @@ the code exists and has been run.
 | --- | --- | --- | --- |
 | 4 | [Design direction](phases/4-design-direction.md) | 2026-09-30 | Three directions — Lab bench, Gallery wall, Storyboard — on the isocan canvas (isocan.io/p/prj_6X7pnbAWFb) and in docs/design/. The designer recommends Storyboard as the spine; the choice is the owner's. · [#3](https://github.com/dalmaer/duo/issues/3) |
 
-## Not started <sub>5</sub>
+## Not started <sub>6</sub>
 
 | | Phase | Since | |
 | --- | --- | --- | --- |
@@ -40,4 +41,5 @@ the code exists and has been run.
 | 7 | [Sound and touch](phases/7-sound-and-touch.md) | 2026-09-30 | Audio start on iOS, multi-touch pads, and latency good enough to play the cajón in time. · [#6](https://github.com/dalmaer/duo/issues/6) |
 | 8 | [Contributing examples](phases/8-contributing-examples.md) | 2026-09-30 | A one-page guide and an issue template for adding an example, so the catalog can grow beyond what one session writes. · [#7](https://github.com/dalmaer/duo/issues/7) |
 | 9 | [Native notes](phases/9-native-notes.md) | 2026-09-30 | For each example, how you would build it natively: which iOS 27.1 API does the work. · [#8](https://github.com/dalmaer/duo/issues/8) |
+| 12 | [Both sides at once](phases/12-both-sides.md) | 2026-09-30 | The outer display lit while the phone is open, a way to turn the emulated device round to see it, and a standing pose. Gates wave C of phase 11. · [#20](https://github.com/dalmaer/duo/issues/20) |
 
