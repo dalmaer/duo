@@ -55,7 +55,11 @@ const regions = document.createElement("label");
 regions.className = "app-toggle";
 regions.innerHTML = `<input type="checkbox"> Show reserved regions`;
 regions.querySelector("input")!.onchange = (e) => host.classList.toggle("show-regions", (e.target as HTMLInputElement).checked);
-poseBar.append(hingeRow, regions);
+const turnBtn = document.createElement("button");
+turnBtn.className = "app-turn";
+turnBtn.type = "button";
+turnBtn.onclick = () => duo.turn();
+poseBar.append(hingeRow, turnBtn, regions);
 
 /* ---------- side panel ---------- */
 function renderPanel(): void {
@@ -75,6 +79,7 @@ function renderPanel(): void {
     <h1>${example.title}</h1>
     <p class="app-summary">${example.summary}</p>
     ${example.principle ? `<div class="app-principle">${example.principle}</div>` : ""}
+    ${example.accessory ? `<h3>The other side</h3><p class="app-summary">${example.accessory} Open it, then <b>Turn around</b> to see what they see.</p>` : ""}
     <h3>In each pose</h3>
     <ol>${rows}</ol>
     ${credits}
@@ -95,6 +100,8 @@ function syncChrome(): void {
     b.querySelector(".app-best")!.textContent = id === example.bestPose ? "best" : "";
   }
   hingeRow.hidden = !pose.adjustable;
+  turnBtn.hidden = !(example.accessory && pose.display === "inner");
+  turnBtn.textContent = duo.facing === "back" ? "↺ Back to your side" : "↻ Turn around";
   hingeInput.value = String(hinge);
   hingeOut.textContent = `${hinge}°`;
   for (const b of catalog.querySelectorAll<HTMLButtonElement>("button")) {
@@ -121,6 +128,7 @@ function open(id: string, poseId?: PoseId): void {
   for (const s of Object.values(duo.screens)) s.replaceChildren();
   example = byId(id) ?? EXAMPLES[0]!;
   const target = poseId ?? example.bestPose;
+  duo.setAccessoryCapable(Boolean(example.accessory));
   lastPose = null;
   // Set the pose first so the example is created into the right-sized screens.
   duo.setPose(target);

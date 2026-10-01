@@ -82,11 +82,23 @@ published point sizes (phase 0, *Deliberately open*).
 | **Open · portrait** | inner | horizontal | 180° | R / R | Flat and turned tall. |
 | **Book** | inner | vertical | 30–175° (120°) | R / R | Partly folded, held like a paperback or stood on its edge. |
 | **Table** | inner | horizontal | 30–175° (105°) | R / R | Partly folded and set down like a laptop: bottom flat, top standing. |
+| **Standing** | inner | vertical | 30–175° (95°) | R / R | Partly open and stood on its edge like a greeting card: hands free, the outer display facing whoever is across from you. |
 
 Apple's list is "closed, fully open, partially folded / book-like,
-surface-resting, and edge-standing". Edge-standing is modelled as book pose
-resting on its edge; if an example needs it distinct, it becomes a seventh pose
-in the table and nothing else changes.
+surface-resting, and edge-standing". Edge-standing was first modelled as book
+pose; it became its own pose (phase 12) when the translator and presenter ideas
+needed the outer display facing someone else — which is exactly what the table
+said would happen: a seventh row, and nothing else changed.
+
+### 2.3 Both sides at once
+
+An app can show extra UI on the outer display while it runs inside — Apple's
+`sceneAccessory` (checklist §9). An example opts in with `accessory: "<what the
+other side shows>"`; in any inner pose `state.accessory` is then true and it
+draws the other person's view into `screens.outer`. **Turn around** rotates the
+emulated device to show that side and take taps there; the inner side goes
+inert while it faces away. The system can switch the accessory off, so an
+example must still work one-way without it.
 
 ### 2.2 The halves
 
@@ -110,7 +122,7 @@ and it is the pattern behind most of the catalog.
 - **The device** — the emulated Duo, drawn in CSS 3D. Changing pose animates
   the fold. In book and table a **hinge slider** sets the angle (30–175°).
   **Show reserved regions** hatches the fold and marks the outer camera.
-- **Pose bar** — six poses with line drawings; the example's best pose is marked.
+- **Pose bar** — seven poses with line drawings; the example's best pose is marked.
 - **Panel** — the example's idea, the HIG principle it shows, what it does in
   *each* pose (tap a row to go there), who it is inspired by, and the current
   pose's facts (display, size classes, halves, hinge).

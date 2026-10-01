@@ -52,6 +52,13 @@ export interface DuoState {
   pose: Pose;
   /** Current hinge angle in degrees: 0 shut, 180 flat. */
   hinge: number;
+  /**
+   * The outer display is lit while the phone is open — Apple's
+   * `sceneAccessory` (HIG checklist §9). Only ever true for an example that
+   * declares `accessory`, in an inner-display pose. Draw the other person's
+   * view into `screens.outer` when it is. (Phase 12.)
+   */
+  accessory: boolean;
 }
 
 export interface Instance {
@@ -84,6 +91,12 @@ export interface Example {
   poses: Partial<Record<PoseId, string>>;
   /** Where the idea came from. Every example drawn from someone's post or repo credits it. */
   credits?: Credit[];
+  /**
+   * Set when the example uses the outer display while open: one sentence on
+   * what the other side shows ("the translation, for the person across the
+   * table"). The explorer then offers to light it and turn the device round.
+   */
+  accessory?: string;
   /** The HIG principle this example shows off, in a sentence, for the side panel. */
   principle?: string;
   create(screens: Screens, state: DuoState): Instance;

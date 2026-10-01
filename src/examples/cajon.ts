@@ -319,6 +319,7 @@ export const cajonExample: Example = {
     "open-portrait": "The same split as table pose, lying flat.",
     book: "Box left, plate right — handy for watching someone else play.",
     table: "The bottom half is the plate and the fold is its top edge: slap near the hinge, bass lower down. The top half shows the instrument and the play-along lane.",
+    stand: "Stood on the table like a card: the box on one page, the plate on the other — for showing someone a groove.",
   },
   principle:
     "Table pose puts content you watch on top and controls you touch on the stable bottom half — the destination Apple gives for at-a-distance content and tappable controls (HIG checklist §6, 'Destination follows purpose').",

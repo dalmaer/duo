@@ -397,6 +397,7 @@ export const critterdexExample: Example = {
     "open-portrait": "Viewer on top, data and controls below — the table layout, lying flat.",
     book: "Held like the real thing: the left page shows the creature on its green screen, the right page types out its entry beside stat bars and a blue keypad.",
     table: "Stood up, the creature and scanner face you on the top half while the entry, d-pad and keypad lie flat under your thumbs.",
+    stand: "Stood open like a field guide propped on a rock: creature on the left, its entry on the right.",
   },
   principle:
     "Book pose gives two facing pages with distinct jobs — picture on one, reading on the other — and the entry keeps typing where it left off through every fold, so continuity across poses is never broken.",

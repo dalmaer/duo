@@ -579,6 +579,7 @@ export const videoExample: Example = {
     "open-portrait": "The same split as table pose, lying flat: picture on top, remote below.",
     book: "Picture on the left page, the remote on the right, like a tiny standing TV guide.",
     table: "Watch above, play below: the standing half is all picture, and the flat half is a big scrubber with chapters, play controls, speed and timestamped comments.",
+    stand: "Stood on the table hands-free: the picture on one half, controls and comments on the other.",
   },
   principle:
     "Table pose puts at-a-distance content up top and tappable controls on the stable bottom half (HIG checklist §6, 'Destination follows purpose'); and when open, the picture sits on one half rather than straddling the middle, because important content should stay clear of the fold (HIG, 'Dynamic layouts and reserved regions').",

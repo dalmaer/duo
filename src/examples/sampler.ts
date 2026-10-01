@@ -602,6 +602,7 @@ export const samplerExample: Example = {
     "open-portrait": "Sequencer above, pads below — the table layout, lying flat with the filter open.",
     book: "Sequencer left, pads right, and the hinge angle now sweeps the low-pass filter; snap it open fast for a drop.",
     table: "Pads lie flat under your fingers, the sequencer stands up on top, and folding the hinge flatter opens the filter — snap it from nearly shut to flat for a riser, a crash and the drop.",
+    stand: "Stood up as a little beat station: sequencer on one side, pads on the other, the angle still on the filter.",
   },
   principle:
     "The hinge is an interaction and an effect, never a layout switch: the angle sweeps a filter while the pads and sequencer stay put, and in table pose you watch the pattern on top and play on the stable bottom half.",

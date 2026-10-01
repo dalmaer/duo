@@ -119,6 +119,8 @@ button { font: inherit; color: inherit; }
 .app-hinge[hidden] { display: none; }
 .app-hinge input { width: min(320px, 60vw); accent-color: var(--accent); }
 .app-hinge output { font-family: var(--mono); min-width: 4ch; }
+.app-turn { border: 1px solid var(--accent); color: var(--accent); background: var(--surface); border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer; }
+.app-turn[hidden] { display: none; }
 .app-toggle { font-size: 13px; color: var(--ink-2); display: flex; gap: 6px; align-items: center; }
 
 .app-panel {
@@ -226,6 +228,11 @@ button { font: inherit; color: inherit; }
 .duo[data-frame="stacked"] [data-screen="end"] { border-radius: 0 0 20px 20px; }
 [data-screen="outer"] { border-radius: 20px; }
 .screen[data-lit="false"] { filter: brightness(0.25); }
+
+/* Turned round in a stacked pose, the outer display's face is upside down
+   relative to the person across the table; the real device would draw it
+   upright for them, so the emulator does too. */
+.duo[data-facing="back"][data-frame="stacked"] [data-screen="outer"] { transform: rotate(180deg); }
 
 /* Reserved regions, drawn when asked for. */
 .fold-mark, .camera { position: absolute; pointer-events: none; display: none; z-index: 5; }

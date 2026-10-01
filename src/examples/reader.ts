@@ -436,6 +436,7 @@ export const readerExample: Example = {
     "open-portrait": "Two pages stacked, top then bottom, still showing the spread that holds your place.",
     book: "Held like a paperback, the fold becomes the gutter between two facing pages.",
     table: "The standing half is the page; the flat half has big page-turn buttons, a progress bar you can tap to jump, and type size.",
+    stand: "Stood up as a reading stand: a two-page spread you turn without holding the phone.",
   },
   principle:
     "Your place is a word, not a page, so every pose re-paginates yet shows the same passage — Apple's continuity rule to preserve element state as the device opens, closes and folds (HIG, 'Displays, poses, and continuity').",

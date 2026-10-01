@@ -10,7 +10,7 @@ test("every pose id has a pose, and the record has no strays", () => {
 test("size classes follow the HIG checklist: outer portrait C/R, outer landscape C/C, inner R/R", () => {
   assert.deepEqual(pose("closed").size, { width: "compact", height: "regular" });
   assert.deepEqual(pose("closed-landscape").size, { width: "compact", height: "compact" });
-  for (const id of ["open", "open-portrait", "book", "table"] as const) {
+  for (const id of ["open", "open-portrait", "book", "table", "stand"] as const) {
     assert.deepEqual(pose(id).size, { width: "regular", height: "regular" }, id);
   }
 });
@@ -49,4 +49,11 @@ test("isPoseId", () => {
   assert.ok(isPoseId("table"));
   assert.ok(!isPoseId("tent"));
   assert.ok(!isPoseId(3));
+});
+
+test("standing is Apple's edge-standing pose: inner display, fold vertical, adjustable", () => {
+  const p = pose("stand");
+  assert.equal(p.display, "inner");
+  assert.equal(p.split, "side-by-side");
+  assert.ok(p.adjustable);
 });

@@ -25,7 +25,7 @@ export type Split = "side-by-side" | "stacked" | "none";
 
 export type SizeClass = "compact" | "regular";
 
-export const POSE_IDS = ["closed", "closed-landscape", "open", "open-portrait", "book", "table"] as const;
+export const POSE_IDS = ["closed", "closed-landscape", "open", "open-portrait", "book", "table", "stand"] as const;
 export type PoseId = (typeof POSE_IDS)[number];
 
 export interface Pose {
@@ -123,6 +123,17 @@ export const POSES: Record<PoseId, Pose> = {
     adjustable: true,
     size: { width: "regular", height: "regular" },
     points: { width: LEAF.height, height: LEAF.width * 2 },
+  },
+  stand: {
+    id: "stand",
+    label: "Standing",
+    holding: "Partly open and stood on its edge on a table, like a greeting card: hands free, and the outer display faces whoever is across from you.",
+    display: "inner",
+    split: "side-by-side",
+    hinge: 95,
+    adjustable: true,
+    size: { width: "regular", height: "regular" },
+    points: { width: LEAF.width * 2, height: LEAF.height },
   },
 };
 

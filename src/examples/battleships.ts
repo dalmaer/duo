@@ -546,6 +546,7 @@ export const battleshipsExample: Example = {
     book: "Target left, fleet right, like reading the battle as a spread; tap the left page to fire.",
     table:
       "Like the real case: the standing half is the target grid you glance at, the flat half holds your fleet taking fire and a letter/number fire control with a big Fire key.",
+    stand: "Stood up between two people like the real game's lid: your target board left, your fleet right.",
   },
   principle:
     "Table pose's destinations mirror the physical game: at-a-distance status on the standing half, touch targets on the stable flat half, and the whole battle carries through every fold (HIG checklist §6, 'Destination follows purpose').",

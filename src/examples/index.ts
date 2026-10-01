@@ -19,20 +19,44 @@ import { sketchbookExample } from "./sketchbook.ts";
 import { flashcardsExample } from "./flashcards.ts";
 import { mailExample } from "./mail.ts";
 import { videoExample } from "./video.ts";
+import { translatorExample } from "./translator.ts";
+import { virtualPetExample } from "./virtual-pet.ts";
+import { instantCameraExample } from "./instant-camera.ts";
+import { teleprompterExample } from "./teleprompter.ts";
+import { subjectPreviewExample } from "./subject-preview.ts";
+import { quizBuzzersExample } from "./quiz-buzzers.ts";
+import { pinballExample } from "./pinball.ts";
+import { pokerExample } from "./poker.ts";
+import { popupBookExample } from "./popup-book.ts";
+import { splitFlapExample } from "./split-flap.ts";
+import { accordionExample } from "./accordion.ts";
+import { musicBoxExample } from "./music-box.ts";
 
 export const EXAMPLES: Example[] = [
   cajonExample,
   samplerExample,
+  accordionExample,
+  musicBoxExample,
   battleshipsExample,
   hingeGuessExample,
+  pinballExample,
+  pokerExample,
   pocketConsoleExample,
   duoManExample,
   critterdexExample,
+  splitFlapExample,
+  virtualPetExample,
+  instantCameraExample,
   readerExample,
   sketchbookExample,
+  translatorExample,
+  teleprompterExample,
   flashcardsExample,
+  popupBookExample,
+  quizBuzzersExample,
   mailExample,
   videoExample,
+  subjectPreviewExample,
 ];
 
 export function byId(id: string): Example | undefined {

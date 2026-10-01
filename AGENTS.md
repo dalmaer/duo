@@ -38,7 +38,7 @@ Use the `duo-explorer` skill. The short version:
    by the example, `render(state)` that clears the three screens and redraws
    from state, `destroy()` that removes the style and stops timers and sound.
 2. Add it to `src/examples/index.ts` in its category.
-3. Fill **every** pose in `poses` — one sentence of what it does there. If it
+3. Fill **every** pose in `poses` (all seven) — one sentence of what it does there. If it
    does nothing special in a pose, say so.
 4. `principle`: the Apple rule it demonstrates, cited from the `apple-hig`
    skill (e.g. *checklist §6, Destination follows purpose*).

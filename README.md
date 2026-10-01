@@ -3,8 +3,8 @@
 **What an app can do on iPhone Duo, in every pose.** → **[dalmaer.github.io/duo](https://dalmaer.github.io/duo/)**
 
 The iPhone Duo folds: an outer display for when it is shut, and an inner
-display that opens to twice the width — flat, half-folded like a book, or set
-down like a tiny laptop. Duo Explorer is a catalog of example apps running on an
+display that opens to twice the width — flat, half-folded like a book, set
+down like a tiny laptop, or stood on its edge facing someone. Duo Explorer is a catalog of example apps running on an
 emulated Duo you can put in each of those poses, so you can see what an app
 *should* do when it is closed, open, standing, or on the table.
 
@@ -31,6 +31,7 @@ for the posts and repos it draws on.
 | ⊟ | Open · portrait | inner, fold horizontal | regular / regular |
 | 📖 | Book | inner, partly folded, 30–175° | regular / regular |
 | 💻 | Table | inner, partly folded, bottom flat | regular / regular |
+| ⛺ | Standing | inner, stood on its edge — the outer display faces the other person | regular / regular |
 
 ## Run it
 

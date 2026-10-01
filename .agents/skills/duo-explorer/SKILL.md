@@ -14,7 +14,7 @@ Read `AGENTS.md` first, then `src/core/example.ts` and `src/examples/cajon.ts`.
 
 ## 1. Design it per pose before writing code
 
-Write one sentence for each of the six poses: what the example does there. Use
+Write one sentence for each of the seven poses: what the example does there. Use
 this rule of thumb and Apple's guidance (`.agents/skills/apple-hig`,
 `references/duo-checklist.md` and `references/hig/designing-for-iphone-duo.md`):
 
@@ -26,6 +26,12 @@ this rule of thumb and Apple's guidance (`.agents/skills/apple-hig`,
 | open-portrait | `start` (top) + `end` (bottom), 380×300 each | Same split, stacked. Horizontal bars. |
 | book | as open, partly folded | Two facing pages. Nothing interactive in the fold. |
 | table | `start` (top, standing) + `end` (bottom, flat) | **Watch on top, touch on the bottom.** |
+| stand | as book, stood on its edge on a table | Hands free. With `accessory`, the outer display faces the person across. |
+
+**Both sides at once.** Set `accessory: "<what the other side shows>"` and,
+when `state.accessory` is true (any inner pose), draw the other person's view
+into `screens.outer` as well. It must still work one-way without it.
+`translator.ts` is the reference.
 
 Where the pose is the mechanic (close to listen, unfold to reveal), react in
 `render` by comparing the new pose with the previous one you stored.
@@ -52,7 +58,7 @@ link — an issue that cites a post or repo must be credited).
 ## 4. Check it
 
 1. `npm run dev`, open `http://localhost:5173/duo/#<id>/<bestPose>`.
-2. Use it, then move through all six poses **mid-use**. Nothing may be lost.
+2. Use it, then move through all seven poses **mid-use**. Nothing may be lost.
 3. In book and table, move the hinge slider across its range.
 4. Turn on *Show reserved regions*: nothing tappable under the hatching.
 5. `npm run check`.

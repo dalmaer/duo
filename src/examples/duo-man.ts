@@ -823,6 +823,7 @@ export const duoManExample: Example = {
     "open-portrait": "Shelf above, open deck below; pick a tape the same way.",
     book: "Hold it like a case: tapes on the left page, the open deck on the right, ready to close and listen.",
     table: "Set down like a boombox: the reels and a level meter stand on top, the transport keys, wheel and tape picker lie flat below.",
+    stand: "Stood on the shelf as a tape deck: the cassette window on one side, the shelf of tapes on the other.",
   },
   principle:
     "Continuity across poses: the tape, its position and the volume survive every fold, and closing — the most natural motion on a Duo — is itself the Play button, while the table pose puts what you watch on top and what you press below.",

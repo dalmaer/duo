@@ -440,6 +440,7 @@ export const sketchbookExample: Example = {
     "open-portrait": "The same easel-above, paper-below split as table pose, lying flat.",
     book: "Held like an open sketchbook, the subject on one page and your drawing on the other, the fold between them.",
     table: "The flat half is the paper on your desk, with colors, brush sizes, undo and clear beside it; the standing half is the easel showing what you're copying, with your lines laid over it.",
+    stand: "Stood up as an easel: the subject on one page, your drawing on the other.",
   },
   principle:
     "In table pose the drawing surface sits on the stable bottom half and the thing you look at stands on top — Apple's destination-follows-purpose rule (HIG checklist §6) — while the strokes, colors and page survive every fold (HIG, 'Displays, poses, and continuity').",

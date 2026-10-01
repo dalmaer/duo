@@ -549,6 +549,7 @@ export const mailExample: Example = {
     "open-portrait": "List on top, message below, with horizontal bars — inner portrait keeps bars horizontal.",
     book: "List on the left page and the message on the right, with a margin either side of the fold so nothing tappable sits in it.",
     table: "The same stacked split as open portrait, with the list's bar at the very top and the message's toolbar at the very bottom — both clear of the fold.",
+    stand: "Stood on a desk as a mini monitor: list left, message right, nothing tappable in the fold.",
   },
   principle:
     "More space shows another level: Mail shows either a list or a message closed, then both side by side open, and on the outer display the bars run down the trailing edge — Dynamic Island, status bar, toolbar, then tab bar (HIG, 'Displays, poses, and continuity' and 'Vertical controls').",

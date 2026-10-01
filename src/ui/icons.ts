@@ -7,5 +7,6 @@ export const POSE_ICONS: Record<PoseId, string> = {
   open: `<svg viewBox="0 0 34 24"><rect x="3" y="3" width="28" height="18" rx="2.5"/><path d="M17 3v18" stroke-dasharray="2 2"/></svg>`,
   "open-portrait": `<svg viewBox="0 0 34 24"><rect x="9" y="1" width="16" height="22" rx="2.5"/><path d="M9 12h16" stroke-dasharray="2 2"/></svg>`,
   book: `<svg viewBox="0 0 34 24"><path d="M17 4 5 1v19l12 3 12-3V1z"/><path d="M17 4v19"/></svg>`,
+  stand: `<svg viewBox="0 0 34 24"><path d="M3 22h28"/><path d="M17 20 7 4l-2 16M17 20l10-16 2 16"/></svg>`,
   table: `<svg viewBox="0 0 34 24"><path d="M8 22h22L26 14H4z"/><path d="M8 14 11 2h18l-3 12"/></svg>`,
 };

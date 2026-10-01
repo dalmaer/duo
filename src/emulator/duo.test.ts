@@ -19,7 +19,7 @@ test("closed folds the first leaf fully over the second, so its back (the outer 
 });
 
 test("the angle between the leaves is 180 minus the hinge, in book and table alike", () => {
-  for (const id of ["book", "table"] as const) {
+  for (const id of ["book", "table", "stand"] as const) {
     for (const hinge of [30, 90, 120, 175]) {
       const t = transformsFor(POSES[id], hinge);
       const between = Math.abs(deg(t.start) - deg(t.end));

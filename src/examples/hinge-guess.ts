@@ -323,6 +323,7 @@ export const hingeGuessExample: Example = {
     "open-portrait": "Flat and tall, the dial reads 180 with its pivot on the horizontal fold.",
     book: "The protractor's pivot sits at the bottom of the fold and its arms sweep across both pages; fold to the target, tap Measure, and see your dashed arm against the real one.",
     table: "The dial turns on its side: the target stands on the upright half, the fixed arm lies along the flat half, and Measure sits under your thumb.",
+    stand: "Stood on its edge, the protractor pivots on the vertical fold — measure the angle hands-free.",
   },
   principle:
     "The hinge is used for interaction, not just layout: the angle between the halves is the game's input, and the round carries over between book and table because state lives in the app, not the pose (HIG, 'Displays, poses, and continuity').",

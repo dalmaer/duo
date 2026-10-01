@@ -532,6 +532,7 @@ export const pocketConsoleExample: Example = {
     book: "Screen on the left, controls on the right — it works, but it wants to be folded the other way.",
     table:
       "The clamshell handheld: the standing half is the LCD you watch, the flat half is the control deck under your thumbs, with keyboard arrows too.",
+    stand: "Propped up like a tiny arcade cabinet: screen on one side, controls on the other.",
   },
   principle:
     "Table pose's controls-below pattern: content you watch stands up, controls you touch lie on the stable half, and the game keeps running through every fold (HIG checklist §6, 'Destination follows purpose').",

@@ -277,6 +277,7 @@ export const flashcardsExample: Example = {
     "open-portrait": "Question on the top half, answer and grading on the bottom.",
     book: "The same as open: question on the left page, answer revealed on the right.",
     table: "The question stands on the top half to read at a glance; the answer and the big grading buttons lie on the flat half under your thumbs.",
+    stand: "Stood between two people: hold up the question side, reveal the answer when they guess.",
   },
   principle:
     "Opening is the reveal, but never the only way to it — Peek and grading work folded too, because Apple asks that you preserve functionality and access in every pose rather than tie a feature to one (HIG, 'Displays, poses, and continuity').",

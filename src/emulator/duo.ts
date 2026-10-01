@@ -52,6 +52,10 @@ export function transformsFor(p: Pose, hinge: number): LeafTransforms {
       return { start: "rotateX(0deg)", end: "rotateX(0deg)", device: "none" };
     case "book":
       return { start: `rotateY(${fold / 2}deg)`, end: `rotateY(${-fold / 2}deg)`, device: "rotateX(6deg)" };
+    case "stand":
+      // Seen from a chair across the table: a little from above, so it reads
+      // as resting on something rather than held.
+      return { start: `rotateY(${fold / 2}deg)`, end: `rotateY(${-fold / 2}deg)`, device: "rotateX(16deg) translateY(-10px)" };
     case "table": {
       const base = fold / 2 + 10;
       return { start: `rotateX(${base - fold}deg)`, end: `rotateX(${base}deg)`, device: "none" };
@@ -67,6 +71,10 @@ export class Duo {
   private leafEnd: HTMLElement;
   private foldMarks: HTMLElement[];
   private state: DuoState;
+  /** Whether the running example draws on the outer display while open (phase 12). */
+  private accessoryCapable = false;
+  /** Which side of the device faces the viewer. Only inner poses can be turned. */
+  private facingBack = false;
   private listeners = new Set<(s: DuoState) => void>();
 
   constructor(host: HTMLElement) {
@@ -93,7 +101,7 @@ export class Duo {
       start: this.el.querySelector('[data-screen="start"]')!,
       end: this.el.querySelector('[data-screen="end"]')!,
     };
-    this.state = { pose: POSES.open, hinge: 180 };
+    this.state = { pose: POSES.open, hinge: 180, accessory: false };
     new ResizeObserver(() => this.fit()).observe(host);
     this.apply();
   }
@@ -110,7 +118,29 @@ export class Duo {
   setPose(id: PoseId, hinge?: number): void {
     const pose = POSES[id];
     const angle = pose.adjustable ? clampHinge(hinge ?? pose.hinge) : pose.hinge;
-    this.state = { pose, hinge: angle };
+    if (pose.display === "outer") this.facingBack = false;
+    this.state = { pose, hinge: angle, accessory: this.accessoryCapable && pose.display === "inner" };
+    this.apply();
+    for (const fn of this.listeners) fn(this.state);
+  }
+
+  /**
+   * The running example uses the outer display while open. Set before
+   * `setPose` when switching examples; the next state carries it.
+   */
+  setAccessoryCapable(on: boolean): void {
+    this.accessoryCapable = on;
+    if (!on) this.facingBack = false;
+  }
+
+  get facing(): "front" | "back" {
+    return this.facingBack ? "back" : "front";
+  }
+
+  /** Turn the device round to see the other side, as the person across the table would. */
+  turn(): void {
+    if (this.state.pose.display !== "inner") return;
+    this.facingBack = !this.facingBack;
     this.apply();
     for (const fn of this.listeners) fn(this.state);
   }
@@ -129,18 +159,21 @@ export class Duo {
     this.device.dataset.frame = frame;
     this.device.dataset.pose = pose.id;
     this.device.dataset.display = pose.display;
-    this.device.style.transform = t.device;
+    this.device.dataset.facing = this.facing;
+    this.device.style.transform = this.facingBack ? `rotateY(180deg) ${t.device === "none" ? "" : t.device}` : t.device;
     this.leafStart.style.transform = t.start;
     this.leafEnd.style.transform = t.end;
     const regions = activeRegions(pose, hinge);
     for (const m of this.foldMarks) m.hidden = !regions.includes("fold");
-    // Only the lit display takes input; a leaf facing away must not catch taps.
-    this.screens.outer.inert = pose.display !== "outer";
-    this.screens.start.inert = pose.display !== "inner";
-    this.screens.end.inert = pose.display !== "inner";
-    for (const [name, s] of Object.entries(this.screens)) {
-      s.dataset.lit = String(name === "outer" ? pose.display === "outer" : pose.display === "inner");
-    }
+    // Only a lit display facing the viewer takes input; a leaf facing away
+    // must not catch taps.
+    const outerLit = pose.display === "outer" || this.state.accessory;
+    this.screens.outer.inert = !(pose.display === "outer" || (this.state.accessory && this.facingBack));
+    this.screens.start.inert = pose.display !== "inner" || this.facingBack;
+    this.screens.end.inert = pose.display !== "inner" || this.facingBack;
+    this.screens.outer.dataset.lit = String(outerLit);
+    this.screens.start.dataset.lit = String(pose.display === "inner");
+    this.screens.end.dataset.lit = String(pose.display === "inner");
     this.fit();
   }
 

@@ -1,8 +1,8 @@
 ---
-status: planned
+status: partial
 since: 2026-09-30
 issue: 20
-note: "The outer display lit while the phone is open, a way to turn the emulated device round to see it, and a standing pose. Gates wave C of phase 11."
+note: "Built: the accessory flag and state, Turn around, and the standing pose, with the Translator using both sides. Not yet checked on a phone; the other three wave C examples are next."
 ---
 
 # Both sides at once
