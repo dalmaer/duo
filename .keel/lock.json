@@ -1,0 +1,49 @@
+{
+  "practice": "0.5.0",
+  "files": {
+    ".agents/skills/conduct/SKILL.md": {
+      "practice": "conduct",
+      "sha256": "f97b22a1f95b240dfc7d1547408a6b0f72211f89e7806ffc38ddd77f7a2e860d"
+    },
+    ".agents/skills/keel/SKILL.md": {
+      "practice": "agents-md",
+      "sha256": "720ddfab36d116ea97cdd8be0afeb6793094166308fef3609cecd14d2d4908d3"
+    },
+    ".claude/skills/conduct": {
+      "practice": "conduct",
+      "sha256": "17ee152e2cdd354af27d61c98cb5943eed933a02fd00e220e75db3af5b12e4df"
+    },
+    ".claude/skills/keel": {
+      "practice": "agents-md",
+      "sha256": "fc2ca840d70a4aed22edaa7c95ff46e2f3098c2f4bd3d3b606d14fa4a2b5305d"
+    },
+    ".github/workflows/keel-night.yml": {
+      "practice": "night",
+      "sha256": "f532c31830bff0ffdfd1e3e20f14625e242bea8cc8223f73758bd6656a0faf3c"
+    },
+    "AGENTS.md#agents-md": {
+      "practice": "agents-md",
+      "sha256": "8c2da366dd8c2f09c7680320b10f5e0521cd12894b0bc482391e5fafe1ed709a"
+    },
+    "AGENTS.md#conduct": {
+      "practice": "conduct",
+      "sha256": "cc44d25bd6e6137b09bdc2bf32921cb88e586e672104ff671242072b71789f22"
+    },
+    "CLAUDE.md": {
+      "practice": "agents-md",
+      "sha256": "afc2da8653649abeb8ecce9a8792e12e755e69986b27659462e790c7d410708a"
+    },
+    "scripts/keel/drain.mjs": {
+      "practice": "night",
+      "sha256": "7ac89a7e67d1a34d72f0cefea45962b6ad7eb9d461cf20d07b0a9d2bb51c7fd3"
+    },
+    "scripts/keel/improve.mjs": {
+      "practice": "night",
+      "sha256": "889f5bb063f24d1edeea0d253e7e19222df1dfdf88a9ed0205c39baf9b20e26a"
+    },
+    "scripts/keel/lib.mjs": {
+      "practice": "night",
+      "sha256": "2d4396b3b0696f8e419882672ffc8aa62516758bddbcad1084ce3556ed080ecb"
+    }
+  }
+}
