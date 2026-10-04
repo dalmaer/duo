@@ -1,13 +1,13 @@
 {
-  "practice": "0.5.2",
+  "practice": "0.6.0",
   "files": {
     ".agents/skills/conduct/SKILL.md": {
       "practice": "conduct",
-      "sha256": "f97b22a1f95b240dfc7d1547408a6b0f72211f89e7806ffc38ddd77f7a2e860d"
+      "sha256": "d0d177ed732718e15abc204587c81836dba5e61963eaea66fd88f1aaa89c4a76"
     },
     ".agents/skills/keel/SKILL.md": {
       "practice": "agents-md",
-      "sha256": "720ddfab36d116ea97cdd8be0afeb6793094166308fef3609cecd14d2d4908d3"
+      "sha256": "4accd02ae7eb1867959de667ba3ffc99b0547b501867227f46edbdb02f250d14"
     },
     ".claude/skills/conduct": {
       "practice": "conduct",
@@ -23,7 +23,7 @@
     },
     "AGENTS.md#agents-md": {
       "practice": "agents-md",
-      "sha256": "8c2da366dd8c2f09c7680320b10f5e0521cd12894b0bc482391e5fafe1ed709a"
+      "sha256": "58ca21f52379d2bf8c85a08bbf96e935421c2bd4537b47c20f1218c6a60c7806"
     },
     "AGENTS.md#conduct": {
       "practice": "conduct",
