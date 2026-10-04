@@ -1,0 +1,24 @@
+{
+  "name": "duo",
+  "tagline": "What an app can do on iPhone Duo, in every pose.",
+  "repo": "dalmaer/duo",
+  "check": "npm run check",
+  "practice": "0.5.1",
+  "practices": [
+    "base",
+    "agents-md",
+    "lessons",
+    "conduct",
+    "night"
+  ],
+  "local": {
+    "phases": "13 phase files of 13 fail keel's parser (missing goal); no docs/goals.json; proposal: migration 0003 adds goal, docs/goals.json and keel's missing sections (marked as added), and applies only once every built phase names evidence — 6 built phases owe it (0-emulator.md, 1-example-contract.md, 2-catalog.md, 3-publish.md, 11-second-wave.md, 12-both-sides.md): write the evidence when each is next checked, or step it back to partial; 0003 never writes placeholder evidence; scripts/roadmap.ts, docs/phases/README.md are the project's own (the project's own roadmap; keel's scripts/roadmap.mjs is not installed beside it); proposal: keep yours (eject), take keel's, or send yours upstream as a lesson",
+    "evidence": "6 built phases name no evidence (0-emulator.md, 1-example-contract.md, 2-catalog.md, 3-publish.md, 11-second-wave.md, 12-both-sides.md); proposal: write evidence when each is next checked, or step it back to partial — never invent it",
+    "ci": "the project has workflows (claude.yml, deploy.yml, test.yml); keel's check.yml is not added beside them, since that would run the gate twice; proposal: point the workflow that gates pushes at `npm run check`, or replace it with keel's check.yml",
+    "claude": ".github/workflows/claude.yml is the project's own (differs from keel's); proposal: keep yours (eject), take keel's, or send yours upstream as a lesson",
+    "renovate": "renovate.json is the project's own (differs from keel's); proposal: keep yours (eject), take keel's, or send yours upstream as a lesson"
+  },
+  "blocksSkipped": [
+    "lessons"
+  ]
+}
