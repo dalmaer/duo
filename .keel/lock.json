@@ -33,6 +33,10 @@
       "practice": "agents-md",
       "sha256": "afc2da8653649abeb8ecce9a8792e12e755e69986b27659462e790c7d410708a"
     },
+    "renovate.json": {
+      "practice": "renovate",
+      "sha256": "63965a9a5d4034d6b0c9e7c644b645632bfc24ce2e90f6c5bc6da0fbb3c8ecbb"
+    },
     "scripts/keel/drain.mjs": {
       "practice": "night",
       "sha256": "1e20c77ebecaa8c76737675f01073dfe0297a524cdc0dc64c920b6b8c823614b"
