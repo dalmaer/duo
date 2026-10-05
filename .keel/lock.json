@@ -1,9 +1,9 @@
 {
-  "practice": "0.6.5",
+  "practice": "0.6.7",
   "files": {
     ".agents/skills/conduct/SKILL.md": {
       "practice": "conduct",
-      "sha256": "d0d177ed732718e15abc204587c81836dba5e61963eaea66fd88f1aaa89c4a76"
+      "sha256": "906f3eddc4843f296203411a94577d35b60409841eeed62a4fba2799d313ecd2"
     },
     ".agents/skills/keel/SKILL.md": {
       "practice": "agents-md",
@@ -19,7 +19,7 @@
     },
     ".github/workflows/keel-night.yml": {
       "practice": "night",
-      "sha256": "85880ec09476048a9aec3981c887b5e403c8a25e5afbcdd7a5ba3c56e3736a57"
+      "sha256": "91d99b02eb332ae1ca275672f63530ca5825cdca7f8a671051f6478b0329b168"
     },
     "AGENTS.md#agents-md": {
       "practice": "agents-md",
@@ -35,11 +35,11 @@
     },
     "scripts/keel/drain.mjs": {
       "practice": "night",
-      "sha256": "64ece991ffe69f3926ebfebd9c32df5b137a8ad620eba97add33560647299af8"
+      "sha256": "1e20c77ebecaa8c76737675f01073dfe0297a524cdc0dc64c920b6b8c823614b"
     },
     "scripts/keel/improve.mjs": {
       "practice": "night",
-      "sha256": "97ad5be4920da7d983beaa25388f9ed1886fe511bb713b857e43c90168320fb3"
+      "sha256": "70bc4127f3391303b85b8b673f02148bc69f730a22b7b4dbc541710f28867b03"
     },
     "scripts/keel/lib.mjs": {
       "practice": "night",
