@@ -105,6 +105,7 @@ Aim for under 600 words.
 # <project> phase <N>: <title>
 
 Contract: docs/phases/<NN-name>.md. Design: <doc> <sections>.
+Real surfaces: <the phase's list, word for word, or none>; build so each one can be proven there.
 Trajectory that binds you: <one line each, only ones that change what you build>.
 Decided here, not in the docs: <…>
 
@@ -166,6 +167,13 @@ as written, from the repo root, and read exit codes, not tails.
   `.env`, nothing under `docs/phases/`.
 - The named Proof, command by command. Not yet the whole check: that runs
   once, after the record (§3), so it covers the tree you will commit.
+- One proof per Real surface, run in that place: the published package
+  installed, the workflow's shell run, the adopted project updated, the
+  owner's machine, a real GitHub API call, the fleet read over nights. A
+  fixture is not the surface. `none` needs nothing here. A surface not yet
+  walked keeps the phase short of built; say which in the evidence.
+- Each acceptance box's named check: the test it cites exists and asserts
+  the box, the command runs, the ⚑ by hand step is walked or written down.
 - The walk, when the phase has one: a real browser, a real device, a real
   `gh` call. A phase with a walk isn't built until the walk is walked. If a
   person must walk it, write the steps into the evidence file.
@@ -216,7 +224,9 @@ When the proof holds, and only then, write the record, all in one change:
   commit.
 - **Trajectory** in the phase file (`## Trajectory`, after Next action): only what changes the course. One line
   per claim: `- **YYYY-MM-DD** — Claim. Evidence.` A phase that went as
-  planned writes `*Nothing — the phase went as planned.*`
+  planned writes `*Nothing — the phase went as planned.*` A defect found
+  after a phase was built is recorded in that phase's Trajectory as
+  `- **YYYY-MM-DD** — Escape: …`; the night counts it (`escapes`).
 - **Deliberately open**: settle the questions that were settled, in place,
   dated, saying what settled them.
 - **Next action** for the phase: the next step if it isn't built; once it
@@ -266,6 +276,35 @@ Land on `main`, no pull request:
 Write a short report between phases (the phase, its new status, the proof and
 what it printed, what changed course). Don't wait for a reply.
 
+## 5. Retro
+
+After the commit, when the phase did real work (its commit changed more than
+`docs/`), look at how the session went, not only what it built:
+
+```sh
+keel retro --worksheet --since <the brief's base commit>   # the commit before the phase's first
+```
+
+The worksheet holds counts and transcript pointers, never transcript text:
+failed commands retried, tool errors, permission denials, files read three or
+more times, tool calls over a minute, edits reverted. A docs-only range says
+so in one line; then there is no retro.
+
+Answer the **seven areas** it lists, a line each: navigation, automatable
+checks, missing standards, AGENTS.md health, tool economy, no-op
+instructions, information gaps. Then put **at most five candidates** in the
+phase report, most serious first, each typed:
+
+- **check**: anything mechanical (a lint, a test, a guard in a script).
+  Mechanical violations get deterministic checks;
+- **AGENTS/skill line**: a judgment call only;
+- **lesson**: a failure shape, through `keel learn`.
+
+**The owner picks.** Nothing is applied unpicked: candidates live in the
+report, not the repo, until the owner picks one; a picked check is built as
+its own small change (or a phase). Never run a retro from the night or a
+climb: unattended, it finds false positives and keeps fixing them.
+
 ## Stopping
 
 The conductor stops for a person, and for nothing else. Record the stop first,
@@ -308,6 +347,8 @@ it's yours.
   Fixtures are synthetic.
 - The conductor proved a drift guard by editing a file, then undid it with
   `git checkout`, which also threw away the builder's uncommitted change to
-  that file. Probe a temp copy, never the tree a builder has written.
+  that file. Probe a temp copy or a separate git worktree, never the tree a
+  builder or another session is using: a mutation there is lost, committed,
+  or tested by someone else.
 - The shell's cwd was reset between commands. Use absolute paths in every
   command you give a subagent.

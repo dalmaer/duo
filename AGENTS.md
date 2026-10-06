@@ -149,6 +149,14 @@ changed one. Everything else is yours.
 <!-- keel:begin conduct -->
 **Conduct the walk.** `/conduct` (the skill in `.agents/skills/conduct`) briefs
 a builder, verifies the proof itself, writes the record and commits each phase
-to `main`. Builders test by file. The conductor runs `npm run check` once on
+to `main`, then runs a retro when the phase changed more than docs (the owner
+picks from its candidates). Builders test by file. The conductor runs `npm run check` once on
 the integrated tree — a green subset hides a red suite, and checking at every level costs more than it catches.
 <!-- keel:end conduct -->
+
+<!-- keel:begin night -->
+**A hygiene note is work.** Each test run ends with the test ledger's
+hygiene block (`scripts/keel/test-ledger.mjs`): a test that was flaky on one
+clean tree, or got slower than its last runs, with the command to run it
+alone. Fix it or file it. Never rerun until green — a rerun hides the flake.
+<!-- keel:end night -->
