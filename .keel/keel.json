@@ -24,5 +24,10 @@
   "migrations": [
     "0004-test-ledger",
     "0005-test-ledger-reach"
-  ]
+  ],
+  "review": {
+    "reviewers": [
+      "chatgpt-codex-connector[bot]"
+    ]
+  }
 }
