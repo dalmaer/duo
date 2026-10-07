@@ -1,9 +1,9 @@
 {
-  "practice": "0.8.16",
+  "practice": "0.8.17",
   "files": {
     ".agents/skills/conduct/SKILL.md": {
       "practice": "conduct",
-      "sha256": "720bf29d1d09a257e0a3b74e43161a89e8071fd375bba87da523ebad21ab9c47"
+      "sha256": "74a2fe760d0279d87917af7d60e5ae4706a9c10e3c9b5a1eef85ecae1b1839ac"
     },
     ".agents/skills/keel/SKILL.md": {
       "practice": "agents-md",
