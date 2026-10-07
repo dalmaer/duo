@@ -3,7 +3,7 @@
   "tagline": "What an app can do on iPhone Duo, in every pose.",
   "repo": "dalmaer/duo",
   "check": "npm run check",
-  "practice": "0.8.14",
+  "practice": "0.8.16",
   "practices": [
     "base",
     "agents-md",
