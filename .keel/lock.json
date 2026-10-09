@@ -1,5 +1,5 @@
 {
-  "practice": "0.8.25",
+  "practice": "0.8.26",
   "files": {
     ".agents/skills/conduct/SKILL.md": {
       "practice": "conduct",
@@ -19,7 +19,7 @@
     },
     ".github/workflows/keel-night.yml": {
       "practice": "night",
-      "sha256": "5a5ccadb0119bde65e72a48bdea636cf0ce28891996353c201e86482d28e3708"
+      "sha256": "ff1bd4535247caae59c2c931a054dd0fec2f27f299e7d3d4d85d8eed0ded418a"
     },
     "AGENTS.md#agents-md": {
       "practice": "agents-md",
@@ -39,7 +39,7 @@
     },
     "docs/keel-lessons.md": {
       "practice": "lessons",
-      "sha256": "c01b5bafa6083e87b1abffd1f0a4390d9443c6ebdc9f17faca2d9bb64dcaf20c"
+      "sha256": "a96d74b94997f265a6897c54ac0f01aed273f779268fe67f40f9ca459f292895"
     },
     "renovate.json": {
       "practice": "renovate",
@@ -55,7 +55,7 @@
     },
     "scripts/keel/lib.mjs": {
       "practice": "night",
-      "sha256": "3b249d4d7ea510ad3ce902372746499cc952628aeb5a9a6876c012eedce0a529"
+      "sha256": "c96fcf9f35f160a51cbd39812acfadc8d1b40470c6ebf14ce54e80c04fde77a5"
     },
     "scripts/keel/pr-body.mjs": {
       "practice": "night",
