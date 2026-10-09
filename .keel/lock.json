@@ -1,5 +1,5 @@
 {
-  "practice": "0.8.21",
+  "practice": "0.8.23",
   "files": {
     ".agents/skills/conduct/SKILL.md": {
       "practice": "conduct",
@@ -19,7 +19,7 @@
     },
     ".github/workflows/keel-night.yml": {
       "practice": "night",
-      "sha256": "a1023067fa1e12d9e051da8e7ae388a04f8cb0d9c708da693a49da82ba2f512c"
+      "sha256": "c9ece437b5bf8071c3c22e8c54ab678233a89d8afbc17f6453216ce9716b1b7c"
     },
     "AGENTS.md#agents-md": {
       "practice": "agents-md",
@@ -51,11 +51,11 @@
     },
     "scripts/keel/improve.mjs": {
       "practice": "night",
-      "sha256": "762e511412bdcff6bd00e6955179434008ce101dbd3174c6e78cc490c87fae5d"
+      "sha256": "75f25d83692688177d1530e29ee500eedf6aa64ffb944aa436bf23ea1ec0cb87"
     },
     "scripts/keel/lib.mjs": {
       "practice": "night",
-      "sha256": "dea63f5421f7d43e03b3e9fc68c09818cbf63379ac16199035a0cfe8bd7f7319"
+      "sha256": "aded88f0735ea6cbecf1e094218ce50d3dac44aadcb4939238594398d1a940b7"
     },
     "scripts/keel/pr-body.mjs": {
       "practice": "night",
