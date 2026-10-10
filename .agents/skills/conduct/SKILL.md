@@ -276,6 +276,13 @@ tree the gate just checked in §3; if anything changes after it, run it again.
   wall time. It carries the gate's result line from §3 (`npm run check`: exit
   code, test count), which the evidence can't, since the evidence is
   written before the gate runs.
+- **A fix is proven by its test failing without it.** A `fix:` commit
+  carries a `Proven-by:` trailer, from `keel prove <test> --fix <the fix's
+  files> --trailer`: it runs the test in a scratch copy with the fix
+  reverted, then in another with it, and never touches the tree. Only
+  VERIFIED proves the fix. NOT WORKING means the test does not catch the bug:
+  make it catch it. INCONCLUSIVE says why it could not tell. Never write the
+  trailer by hand.
 - **Proofs that need the commit** (§3): walk them now, against the committed
   tree, and record them in the next commit.
 
@@ -316,6 +323,19 @@ the PR, `keel review <repo>#<n> --wait`, answer every comment, and merge only
 when `keel review <repo>#<n> --gate` exits 0 (every comment answered, each
 named reviewer has reviewed the head commit). The default is neither: no PR,
 no wait.
+
+**In keel itself, a practice change is reviewed before a release**
+(`.keel/keel.json` says `"keel": "self"`). A change under `practices/`,
+`migrations/` or `docs/lessons.md` is what the fleet receives, so it lands as
+a `claude/` PR: push it to `claude/phase-<N>`, open the PR, and wait for the
+other provider's review (cross-review: Codex reviews `claude/` PRs) with
+`keel review <repo>#<n> --wait`. Answer every comment; after a fix, comment
+`/review` so the head is reviewed again. Merge when every comment is answered
+and someone other than the PR's author has reviewed its head. `keel release`
+refuses a practice commit that came any other way, naming it; only the
+owner's `--unreviewed "<why>"` goes past it, never `--yes`. Records
+(`docs/phases/`, evidence, the roadmap) and CLI-only changes may still go to
+`main`.
 
 Write a short report between phases (the phase, its new status, the proof and
 what it printed, what changed course). Don't wait for a reply.
