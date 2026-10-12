@@ -1,9 +1,9 @@
 {
-  "practice": "0.8.28",
+  "practice": "0.8.29",
   "files": {
     ".agents/skills/conduct/SKILL.md": {
       "practice": "conduct",
-      "sha256": "7f857af95c123aac9713245232901434c42593b8fc8ba8a929cb991be4a9a62d"
+      "sha256": "0509217117d94ae026a6f75d202447d9c2d48fdf449b1eb89bfe3a98ce0c5260"
     },
     ".agents/skills/keel/SKILL.md": {
       "practice": "agents-md",
@@ -19,19 +19,19 @@
     },
     ".github/workflows/keel-night.yml": {
       "practice": "night",
-      "sha256": "14c99fa38b670a72b6e8a43bf8aede4399a42384d180b44e343bd44c847ece71"
+      "sha256": "72d716bb9d004a379037a69fa55724f0a582ad9c8ffe082df93c71eb4e38426e"
     },
     "AGENTS.md#agents-md": {
       "practice": "agents-md",
-      "sha256": "58ca21f52379d2bf8c85a08bbf96e935421c2bd4537b47c20f1218c6a60c7806"
+      "sha256": "19e30c2bff4c0341ea84526cc923abf1d796c1ec47b8cbc8698d80e6c5fceb61"
     },
     "AGENTS.md#conduct": {
       "practice": "conduct",
-      "sha256": "ca8b1ffe73aefa2c2c2d87b019e74bc24b97cd9ece6b620fa9905e044423734c"
+      "sha256": "b2296b93516ada83b80cdf52b0520dc52f397c860c59dc27b6bb88900caa879a"
     },
     "AGENTS.md#night": {
       "practice": "night",
-      "sha256": "e9561083068ffca7ad1f9548a1fe8e56238f9e451e80b9bb79e64ed2a622da81"
+      "sha256": "b22d3ac1c86f24d21559e377306ec1347a430507fc660bd7bf594b7e25184acf"
     },
     "CLAUDE.md": {
       "practice": "agents-md",
@@ -53,17 +53,37 @@
       "practice": "night",
       "sha256": "04446d1796f5975e6ebf9d1f0d9729260b45b81c93782a9b867ea42784624aff"
     },
+    "scripts/keel/hygiene-measures.mjs": {
+      "practice": "night",
+      "sha256": "a2b0239c0cac593495b7118b399f43268cd92be1c0f16b230f4b2aa311f6cc49"
+    },
+    "scripts/keel/hygiene-proposals.mjs": {
+      "practice": "night",
+      "sha256": "2b44be83d4900bd68a32831e89e70e27cf34821460415b4bef8579e0446e4145"
+    },
     "scripts/keel/improve.mjs": {
       "practice": "night",
-      "sha256": "d78d67e22cc3addf0e9d627402f57c3b9a09f80dbf31cea75e652ecd65e24aa1"
+      "sha256": "b10832d96abc185564fbc4879e74d0cc0ef632f0d6172d64ab71673516645a59"
     },
     "scripts/keel/lib.mjs": {
       "practice": "night",
-      "sha256": "e87a2e1c431618a59d8cc7f46e78d326018dbf332b8d72a7e16f5fc03fcacc6b"
+      "sha256": "a9ecc432189eed5e5e5f0ff8d06c1f199c0e32a8232d99ce95791e904a5c20bc"
+    },
+    "scripts/keel/milestones.mjs": {
+      "practice": "night",
+      "sha256": "e37492e3518422faea8580916032aa7dcff314e499e627338ede403edb7dc3bb"
+    },
+    "scripts/keel/planning-config.mjs": {
+      "practice": "night",
+      "sha256": "f47844a4e5e1f2259d67c4e3d8e4a6e43a4cb036ed1f6357438fee801f03ef3e"
     },
     "scripts/keel/pr-body.mjs": {
       "practice": "night",
       "sha256": "2e8e8f826bf95501d918c32fe29079c2d0702959a89257a015e73a10a0a84c53"
+    },
+    "scripts/keel/quota.mjs": {
+      "practice": "night",
+      "sha256": "28df0b963beceea8c773e6dacdbc2d97226a5132374a418eb5edb9aa5a73e452"
     },
     "scripts/keel/robot-budget.mjs": {
       "practice": "night",
