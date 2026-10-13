@@ -1,4 +1,7 @@
 {
+  "stale_worktrees": 0,
+  "drafts_waiting": 0,
+  "long_files": 0,
   "gate_time": null,
   "time_creep": null,
   "critical_file": null,
