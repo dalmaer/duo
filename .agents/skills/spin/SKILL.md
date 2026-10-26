@@ -215,6 +215,17 @@ focused tests; the whole check stays yours, once, in §3.
   Never stage before an autostash pull: the pull hands staged changes back unstaged.
 - `git status --short`: only the phase's files changed, no leftovers, no
   `.env`, nothing under `docs/phases/`.
+- **Inventory conventions before the integrated checkpoint.** (why: A focused
+  behavior test can pass while a repository convention fails, wasting a full gate.) Enumerate the
+  changed-file conventions alongside the behavioral proof: test subprocess
+  helpers and hermetic setup for tests; guide/CLI command and placement guards
+  for documentation; generated-output and whitespace checks for their inputs.
+  If the project configures `check:focused`, run `npm run` with script name
+  `check:focused`, followed by `--` and the specific affected test files before the whole gate, and fix any failure
+  there first. Its required convention bundle cannot be omitted by selecting
+  only the behavioral test. Otherwise name and run the equivalent repository
+  convention checks explicitly. Unknown impact still requires broad validation;
+  this early feedback does not replace or weaken the integrated gate.
 - The named Proof, command by command. Not yet the whole check: that runs
   once, after the record (§3), so it covers the tree you will commit.
 - One proof per Real surface, run in that place: the published package
@@ -241,7 +252,7 @@ conductor edits documents (except in a small phase it built itself).
 
 ## 3. Record
 
-With reconciliation enabled, include one `keel-impact` JSON fence in the PR
+With reconciliation enabled, include one `plates-impact` JSON fence in the PR
 body naming affected phases, decisions, superseded plans and evidence. Check
 the actual diff. Update those records and their next action in the same PR,
 or give per-record reasons for leaving them unchanged; no impact needs a
