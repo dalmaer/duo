@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "shapedBy": "default",
   "readyBy": null,
   "willNotTouch": [],
@@ -9,7 +9,7 @@
   "items": [
     {
       "id": "measures",
-      "title": "Measure the practice: 39 measures; outside or broken on 2026-10-28: issues_unnamed, reviews_unanswered, dependency_age",
+      "title": "Measure the practice: 39 measures; outside or broken on 2026-10-29: machine_prs, issues_unnamed, dependency_age",
       "kind": "measure",
       "source": "default",
       "number": null,
@@ -17,13 +17,13 @@
       "budget": null,
       "status": "done",
       "result": {
-        "note": "14 ok, 3 outside, 22 n/a, 0 broken",
-        "link": "docs/health/2026-10-29.md"
+        "note": "13 ok, 4 outside, 22 n/a, 0 broken",
+        "link": "docs/health/2026-10-30.md"
       }
     },
     {
       "id": "health-issues-unnamed",
-      "title": "Proposal from 2026-10-28: Name issues #10, #11, #12, #13, #14, #15 and 5 more in the doc whose work they follow, or close them on dalmaer/duo.",
+      "title": "Proposal from 2026-10-29: Name issues #10, #11, #12, #13, #14, #15 and 5 more in the doc whose work they follow, or close them on dalmaer/duo.",
       "kind": "review",
       "source": "health:issues_unnamed",
       "number": {
