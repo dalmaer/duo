@@ -44,9 +44,8 @@
 name: plates-night
 
 on:
-  schedule:
-    # 07:23 UTC, off the hour, so it does not queue behind every other cron.
-    - cron: "23 7 * * *"
+  # Paused 2026-11-10 (plates.json "paused"): the schedule is off, so this runs
+  # only by hand. To resume, run `plates doctor --fix .github/workflows/plates-night.yml restore`.
   workflow_dispatch:
     inputs:
       names_evidence:
