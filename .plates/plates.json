@@ -32,5 +32,9 @@
     "version": 1,
     "enabled": false,
     "applicability": "not-applicable"
+  },
+  "unison": {
+    "workspace": "ws_16dbe71d",
+    "url": "https://unison.cloud.run/w/ws_16dbe71d"
   }
 }
