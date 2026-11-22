@@ -9,8 +9,7 @@
     "agents-md",
     "lessons",
     "conduct",
-    "night",
-    "renovate"
+    "night"
   ],
   "local": {
     "phases": "13 phase files of 13 fail keel's parser (missing goal); no docs/goals.json; proposal: migration 0003 adds goal, docs/goals.json and keel's missing sections (marked as added), and applies only once every built phase names evidence — 6 built phases owe it (0-emulator.md, 1-example-contract.md, 2-catalog.md, 3-publish.md, 11-second-wave.md, 12-both-sides.md): write the evidence when each is next checked, or step it back to partial; 0003 never writes placeholder evidence; scripts/roadmap.ts, docs/phases/README.md are the project's own (the project's own roadmap; plates's scripts/roadmap.mjs is not installed beside it); proposal: keep yours (eject), take plates's, or send yours upstream as a lesson",
