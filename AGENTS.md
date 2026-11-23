@@ -137,60 +137,8 @@ it; tell the person and say where it came from.
 
 The regions between plates markers are rendered by plates; the rest of this file is the project's own.
 
-<!-- plates:begin agents-md -->
 **⚑ steps are asked, with the price.** Creating repos, setting secrets,
 enabling Pages, filing issues on another repo, scheduling model spend: each
 one waits for the owner's yes.
 (why: External resources and recurring spend create obligations only the owner can accept.)
 
-plates's files are listed in `.plates/lock.json`; `plates doctor` says if you
-changed one. Everything else is yours.
-<!-- plates:end agents-md -->
-
-<!-- plates:begin conduct -->
-**Spin the next phase.** `/spin` (the skill in `.agents/skills/spin`) briefs
-a builder (a phase of a file or two it may build itself: the skill's *Small
-phases*), names the first safe merge, verifies the proof itself and lands
-independently safe increments on `main` throughout the phase. Keep the phase
-partial until all its acceptance is proven; merged, deployed/installed, enabled
-and verified are separate facts. Read the project philosophy named by this guide.
-Run a retro when the phase changed more than docs (the owner picks from its
-candidates). Builders test by file. The conductor runs `npm run check` once per
-integrated candidate — a green subset hides a red suite, and checking at every level costs more than it catches.
-(why: Plates lessons 4 and 5: a green subset hides failures, while repeated full gates waste work.)
-
-**A fix is proven by its test failing without it.** A `fix:` commit
-carries a `Proven-by:` trailer from `plates prove <test> --fix <files>
---trailer`: VERIFIED, or the reason it is not.
-(why: Plates lesson 38: a check can stay green without evaluating its claim.)
-
-**Answer every review.** When a PR has reviews, validate each comment against
-the code first, then answer it with one of the three replies: fixed (the
-commit), tracked (the issue or version) or not valid (why), with
-`plates review <repo>#<n> --close <id> …`; never leave one unanswered. Not a
-gate: an open thread never blocks a merge.
-(why: An unanswered finding leaves the next reader unable to tell whether it was fixed or rejected.)
-
-**Install separately from ongoing care.** A compatible reviewed update is installed
-when its exact source, managed bytes and required workflow restoration are read
-back. Pending optimization and incomplete nightly observations remain visible;
-they do not accept work or block that installation. Pause/drain/restore only the
-affected workflows when concurrency identity actually changes.
-(why: The name-transition rollout waited on unrelated optimization after its installation checks had passed.)
-
-**Reuse unchanged authority and proof.** A handoff retains the original operation,
-scoped owner approval and evidence. Reinspect changed facts; ask again when the
-permitted action, destination, budget or risk changes. An approval for an exact
-head never transfers to an edited candidate. Repeated review findings require a
-fix to their shared cause and focused negative controls before another integrated
-checkpoint; preserve the existing review limit and original failures.
-(why: Plates lesson 59: fixing only the reported instance allowed the same failure shape to return in later review rounds.)
-<!-- plates:end conduct -->
-
-<!-- plates:begin night -->
-**A hygiene note is work.** Each test run ends with the test ledger's
-hygiene block (`scripts/plates/test-ledger.mjs`): a test that was flaky on one
-clean tree, or got slower than its last runs, with the command to run it
-alone. Fix it or file it. Never rerun until green — a rerun hides the flake.
-(why: A passing retry loses the evidence of an intermittent failure.)
-<!-- plates:end night -->
