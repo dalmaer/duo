@@ -2,7 +2,7 @@ name: Claude
 
 # Mention @claude on an issue, a PR, or a review comment and Claude works on it
 # in this repo, with AGENTS.md and the skills in .agents/skills as context. It
-# opens pull requests; a person merges (docs/phases/10-agents-build-it.md).
+# opens pull requests; a person merges.
 #
 # Needs the repository secret CLAUDE_CODE_OAUTH_TOKEN (`claude setup-token`)
 # or ANTHROPIC_API_KEY.
