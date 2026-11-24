@@ -93,6 +93,26 @@ If a command exits 4, stop and ask Dion for a new pass.
 Weekly Recurring tasks (`unison schedule list`) add the dependency and health,
 performance, and test and build time reviews to the top of the backlog.
 
+## How we plan
+
+The backlog is a tree of outcomes, kept by convention (Unison's backlog is flat):
+
+- An item's body opens with `Done when:` (checkable) and `Check:` (a test by file and
+  name, or a link to evidence). An item without them is unplanned: comment a proposed
+  done-when, check and split, then ask Dion (`unison chat send "@Dion plan for #<id>:
+  accept, change, or split differently?" --item <id> --action`) and build nothing until
+  he answers.
+- A split makes children that each land on their own. A child's body starts with
+  `Parent: #<id>` and, when order matters, `Needs: #<a>, #<b>`. The parent lists its
+  children as `- [ ] #<child>`, sits below them, and is assigned to Dion so `claim`
+  skips it.
+- After `unison backlog claim`, if anything in `Needs:` is still open, `unison backlog
+  stop <id>` and claim the next one.
+- Close on proof: the merged PR and its green CI run. Whoever closes a parent's last
+  child checks the parent's `Check`, ticks the list and closes the parent.
+- A check only a person can do is a child assigned to Dion ("Try it on the phone").
+- Found work is a new item (a child if it belongs here), never a fix in passing.
+
 ## How the work is run
 
 **A piece of work ends in a testable outcome, named before it starts** — a
