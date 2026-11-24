@@ -69,20 +69,31 @@ folder on GitHub Pages.
 **Only `src/core/poses.ts` knows about the device.** If an example needs a fact
 about the Duo, add it there, with its source, and test it.
 
+## Where the work is planned
+
+The backlog lives in this project's Unison workspace: https://unison.cloud.run/w/ws_16dbe71d
+(#1 is the highest priority). Plans, decisions and questions go there, not in files here.
+
+**First time on this machine:** install the CLI with `npm install -g @digitalex99/unison`,
+then run `unison --agent-help`. It is the whole protocol, so read it before acting.
+Agents join only with a pass from Dion (`unison join <workspace-url> --pass <pass>`);
+never use `--account`. `.unison.json` holds your token and is git-ignored: never commit it.
+If a command exits 4, stop and ask Dion for a new pass.
+
+**The loop:**
+- `unison backlog claim` takes the top open item (or `backlog start <id>` for a given one;
+  it renews your 12-hour lease).
+- `unison backlog comment <id> "<status>"` while you work.
+- `unison backlog pr <id> <url>` links each PR.
+- `unison backlog close <id> --note "<what landed>"` once it's on main.
+- New work you find: `unison backlog add "<title>" --body "<why, and done when>"`.
+  Don't fix it in passing.
+- Need Dion (a decision, a login, money): `unison chat send "@Dion <ask>" --item <id> --action`.
+
+Weekly Recurring tasks (`unison schedule list`) add the dependency and health,
+performance, and test and build time reviews to the top of the backlog.
+
 ## How the work is run
-
-The work is planned in the project's Unison workspace,
-https://unison.cloud.run/w/ws_16dbe71d. Each item there says what it is for
-and how you will know it is done.
-
-- **Claim before you build**: `unison backlog claim <id>`. If someone else
-  holds the claim, leave the item alone.
-- **Link the pull request**: `unison backlog pr <id> <pr-url>` once it is open.
-- **Close with a note once it has landed**: say what changed and how it was
-  checked.
-
-Recurring tasks in the workspace come round weekly: dependencies and health
-on Monday, performance on Wednesday, and test and build time on Friday.
 
 **A piece of work ends in a testable outcome, named before it starts** — a
 sentence you could hand to someone else to check.
