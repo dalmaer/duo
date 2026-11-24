@@ -3,8 +3,8 @@
 An explorer for the iPhone Duo: what an app *can do* on a phone that folds,
 shown by running examples on an emulated Duo that you can put in every pose.
 
-This document is the reasoning. Where the project stands is in
-[docs/ROADMAP.md](docs/ROADMAP.md), generated from [docs/phases/](docs/phases/).
+This document is the reasoning. Where the project stands is in its Unison
+workspace (https://unison.cloud.run/w/ws_16dbe71d).
 How to work here is [AGENTS.md](AGENTS.md).
 
 ---
@@ -240,7 +240,7 @@ scrubber and details on the flat half; playback continues across every pose.
 
 Twenty-three more, chosen by a sharper test — *does it use the fold in a way a
 flat phone cannot copy?* — are listed with their tricks and issues in
-[docs/phases/11-second-wave.md](docs/phases/11-second-wave.md): the hinge as
+[the second-wave plan](https://github.com/dalmaer/duo/blob/7a0089256f35507c964e9a5e423f57ce615aea3b/docs/phases/11-second-wave.md): the hinge as
 an input (Accordion, Fishing, Pop-up Storybook, Anatomy Layers), opening and
 closing as the move (Music Box, Etch-a-sketch, Pocket Pal, Instant Camera),
 the standing half as a wall (Pinball, Poker, Chomp, Typewriter), and the outer
@@ -299,8 +299,8 @@ face-to-face two-player game standing on its edge; a map with directions below.
 - **Vite + TypeScript**, no UI framework. `npm run dev` serves at
   `http://localhost:5173/duo/`; `base` is `/duo/` to match Pages.
 - **Tests** with `node --test` on Node 24 (types stripped natively): the pose
-  table, the emulator transforms, the example registry, and the roadmap.
-- **CI** in GitHub Actions: tests, typecheck, roadmap check, build; deploy to
+  table, the emulator transforms and the example registry.
+- **CI** in GitHub Actions: tests, typecheck, build; deploy to
   Pages on `main`; a smoke check that the live page serves the build just made.
 - **Agents**: `AGENTS.md`; the `apple-hig` skill (submodule) for Apple's rules;
   the `duo-explorer` skill for adding examples; `@claude` on issues and PRs.

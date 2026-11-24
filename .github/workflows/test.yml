@@ -24,8 +24,4 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run typecheck
-      # The roadmap is a VIEW of each phase's front matter. A view that can go
-      # stale is how status came to be written in two places that disagreed.
-      - name: The roadmap is current
-        run: npm run roadmap -- --check
       - run: npm run build

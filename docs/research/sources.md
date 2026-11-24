@@ -28,7 +28,7 @@ are summarized, not quoted; the ideas are reimplemented, never copied.
 | [erkamyaman/hinge-guess](https://github.com/erkamyaman/hinge-guess) (MIT) | Ionic/Capacitor game: fold to a target hinge angle, then measure. Protractor pivot on the crease. Documents how the hinge plugin behaves (iOS pauses the web view while moving between displays, so it polls). | **Hinge Guess** reimplements the game. Vendored as a submodule at `vendor/hinge-guess` for reference. |
 | [justinwetch/HIGAgentSkills](https://github.com/justinwetch/HIGAgentSkills) | The `apple-hig` agent skill: 157 distilled HIG references updated for iPhone Duo and OS 27, a `/duo` redesign workflow, and a Duo checklist from Apple's six tech talks. | Submodule at `.agents/skills/apple-hig`, linked into `.claude/skills/` and `.claude/commands/duo.md`. The source of every Apple rule this project cites. No licence file, so it is referenced, not copied. |
 | [dalmaer/cajones](https://github.com/dalmaer/cajones) (Ritmo) | A cajón practice room: synthesized bass/slap/accent voices, thirteen grooves, iOS audio fixes. | **Cajón** ports its voices, two grooves and the iOS audio-unlock rule into `src/lib/audio.ts`. |
-| [dalmaer/ledger](https://github.com/dalmaer/ledger) | A personal task ledger. | The way the work is run: phases with status in front matter, the derived roadmap and its CI check, lessons, AGENTS.md. |
+| [dalmaer/ledger](https://github.com/dalmaer/ledger) | A personal task ledger. | The way the work is run: lessons and AGENTS.md. |
 
 ## Apple
 

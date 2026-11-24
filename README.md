@@ -38,7 +38,7 @@ for the posts and repos it draws on.
 ```bash
 npm install
 npm run dev        # http://localhost:5173/duo/
-npm run check      # tests, typecheck, roadmap, build — what CI runs
+npm run check      # tests, typecheck, build — what CI runs
 ```
 
 Node 24 (`.nvmrc`). No framework and no runtime dependencies.
@@ -53,9 +53,9 @@ waiting to be built are [issues labelled `example`](https://github.com/dalmaer/d
 
 ## How the work is run
 
-Phases, each with its status in its own front matter →
-[docs/ROADMAP.md](docs/ROADMAP.md) (generated). Every unfinished phase has a
-GitHub issue, and every issue is on the [duo project board](https://github.com/users/dalmaer/projects/1). Design options live on the project's
+The work is planned in the project's Unison workspace
+(https://unison.cloud.run/w/ws_16dbe71d). Example ideas are GitHub issues on the
+[duo project board](https://github.com/users/dalmaer/projects/1). Design options live on the project's
 [isocan](https://isocan.io) canvas (`.isocan/project.json`) and in
 [docs/design/](docs/design/). Working rules for people and agents:
 [AGENTS.md](AGENTS.md).
